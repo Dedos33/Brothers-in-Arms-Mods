@@ -40,12 +40,12 @@ jobs:
     - name: Pull Arma3Tools
       run: |
         echo ${{ secrets.CR_PAT }} | docker login -u ${{ secrets.CR_USER }} --password-stdin ghcr.io
-        docker pull ghcr.io/BrothersInArms/arma3tools:latest
+        docker pull ghcr.io/armaforces/arma3tools:latest
     - name: Build using HEMTT
       run: |
-        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/BrothersInArms/arma3tools:latest hemtt build --release --ci --time
+        docker run -v "$(pwd):c:/workdir" -e CI=$True ghcr.io/armaforces/arma3tools:latest hemtt build --release --ci --time
 
     - uses: actions/upload-artifact@v2
       with:
-        name: BrothersInArms_mods
+        name: armaforces_mods
         path: releases/*.zip

@@ -1,6 +1,6 @@
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
 #
-*       @BrothersInArms/sqf-devs
+*       @ArmaForces/sqf-devs
 
 /extension/      @veteran29
-/BrothersInArms_mods_x64.dll        @veteran29
+/armaforces_mods_x64.dll        @veteran29

@@ -52,7 +52,7 @@
                 " None",
                 "",
                 " Example:",
-                " [[bob, ted], false] call bia_main_fnc_example",
+                " [[bob, ted], false] call afm_main_fnc_example",
                 "",
                 " Public: No"
             ]

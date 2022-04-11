@@ -21,7 +21,7 @@ exclude-labels:
 
 change-template: '- $TITLE (#$NUMBER)'
 template: |
-  _BrothersInArms Mods release._
+  _ArmaForces Mods release._
 
   ## Change Log Summary
 

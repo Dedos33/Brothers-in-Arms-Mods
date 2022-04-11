@@ -6,15 +6,15 @@ extern crate lazy_static;
 #[macro_use]
 extern crate log;
 
-static EXT: &str = "BrothersInArms_mods";
+static EXT: &str = "armaforces_mods";
 
 lazy_static! {
     static ref MISSION_API: String = std::env::var("AF_MISSION_API")
-        .unwrap_or_else(|_| String::from("https://boderator.BrothersInArms.com/api"));
+        .unwrap_or_else(|_| String::from("https://boderator.armaforces.com/api"));
     static ref ATTENDANCE_API: String = std::env::var("AF_ATTENDANCE_API")
-        .unwrap_or_else(|_| String::from("https://BrothersInArms.com/api"));
+        .unwrap_or_else(|_| String::from("https://armaforces.com/api"));
     static ref SERVER_API: String = std::env::var("AF_SERVER_API")
-        .unwrap_or_else(|_| String::from("https://server.BrothersInArms.com:8888"));
+        .unwrap_or_else(|_| String::from("https://server.armaforces.com:8888"));
     static ref ATTENDANCE_TOKEN: String =
         std::env::var("AF_ATTENDANCE_API_TOKEN").unwrap_or_default();
 }
@@ -99,7 +99,7 @@ impl log::Log for ArmaLogger {
     fn log(&self, record: &Record) {
         if self.enabled(record.metadata()) {
             rv_callback!(
-                "BrothersInArms_mods_log",
+                "armaforces_mods_log",
                 format!("{}", record.level()).to_uppercase(),
                 format!("{}", record.args())
             );
