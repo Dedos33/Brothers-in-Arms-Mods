@@ -33,7 +33,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "armaforces_mods"
+name = "BrothersInArms_mods"
 version = "0.2.0"
 dependencies = [
  "arma-rs",

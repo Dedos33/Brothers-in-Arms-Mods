@@ -12,7 +12,7 @@
  * 2: Easter day <NUMBER>
  *
  * Example:
- * [2021] call afm_common_fnc_easterDate
+ * [2021] call bia_common_fnc_easterDate
  *
  * Public: No
  */

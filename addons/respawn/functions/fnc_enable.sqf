@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call afm_respawn_fnc_enable
+ * call bia_respawn_fnc_enable
  *
  * Public: No
  */

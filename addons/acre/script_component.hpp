@@ -1,5 +1,5 @@
 #define COMPONENT acre
-#include "\z\afm\addons\main\script_mod.hpp"
+#include "\z\bia\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -11,7 +11,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_ACRE
 #endif
 
-#include "\z\afm\addons\main\script_macros.hpp"
+#include "\z\bia\addons\main\script_macros.hpp"
 
 #define ICON_RADIO_CALL "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\call_ca.paa"
 

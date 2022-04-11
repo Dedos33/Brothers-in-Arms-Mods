@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [true] call afm_grass_fnc_toggle
+ * [true] call bia_grass_fnc_toggle
  *
  * Public: No
  */

@@ -1,1 +1,1 @@
-#include "\z\afm\addons\nightvision\script_component.hpp"
+#include "\z\bia\addons\nightvision\script_component.hpp"

@@ -1,1 +1,1 @@
-#include "\z\afm\addons\acre\script_component.hpp"
+#include "\z\bia\addons\acre\script_component.hpp"

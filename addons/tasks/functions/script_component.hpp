@@ -1,1 +1,1 @@
-#include "\z\afm\addons\tasks\script_component.hpp"
+#include "\z\bia\addons\tasks\script_component.hpp"

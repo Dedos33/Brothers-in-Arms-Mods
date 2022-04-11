@@ -10,7 +10,7 @@
  * 0: True if any ACRE modules are placed <BOOL>
  *
  * Example:
- * call afm_acre_fnc_acreModulesPresent
+ * call bia_acre_fnc_acreModulesPresent
  *
  * Public: No
  */

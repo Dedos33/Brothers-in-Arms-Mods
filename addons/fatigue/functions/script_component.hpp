@@ -1,1 +1,1 @@
-#include "\z\afm\addons\fatigue\script_component.hpp"
+#include "\z\bia\addons\fatigue\script_component.hpp"

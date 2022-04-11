@@ -7,9 +7,9 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "afm_common"
+            "bia_common"
         };
-        author = "ArmaForces";
+        author = "BrothersInArms";
         authors[] = {"3Mydlo3", "veteran29"};
         VERSION_CONFIG;
     };

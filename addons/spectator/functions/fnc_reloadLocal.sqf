@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call afm_spectator_fnc_reloadLocal
+ * call bia_spectator_fnc_reloadLocal
  *
  * Public: No
  */

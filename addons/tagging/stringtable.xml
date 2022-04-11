@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="AFM">
+<Project name="bia">
     <Package name="Tagging">
-        <Key ID="STR_AFM_Tagging_DisplayName">
-            <English>ArmaForces - Tagging</English>
+        <Key ID="STR_bia_Tagging_DisplayName">
+            <English>BrothersInArms - Tagging</English>
         </Key>
-        <Key ID="STR_AFM_Tagging_Enabled">
+        <Key ID="STR_bia_Tagging_Enabled">
             <English>Enable ACE Tagging markers</English>
             <Polish>Włącz markery ACE Tagging</Polish>
         </Key>
-        <Key ID="STR_AFM_Tagging_Enabled_Description">
+        <Key ID="STR_bia_Tagging_Enabled_Description">
             <English>Automatically create markers on buildings sprayed with ACE Spray.</English>
             <Polish>Automatycznie tworzy markery na budynkach oznaczonych sprejem z ACE.</Polish>
         </Key>

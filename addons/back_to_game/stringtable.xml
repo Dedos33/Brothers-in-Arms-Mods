@@ -1,51 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="AFM">
+<Project name="bia">
     <Package name="Back_To_Game">
-        <Key ID="STR_AFM_Back_To_Game_DisplayName">
-            <English>ArmaForces - Back To Game</English>
-            <Polish>ArmaForces - Back To Game</Polish>
+        <Key ID="STR_bia_Back_To_Game_DisplayName">
+            <English>BrothersInArms - Back To Game</English>
+            <Polish>BrothersInArms - Back To Game</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_EnableAddon">
+        <Key ID="STR_bia_Back_To_Game_EnableAddon">
             <English>Enable Back To Game</English>
             <Polish>Włącz Back To Game</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_EnableAddon_Description">
+        <Key ID="STR_bia_Back_To_Game_EnableAddon_Description">
             <English>Activate teleport and loadout restore after reconnect.</English>
             <Polish>Aktywuj teleportację i przywrócenie wyposażenia po ponownym połączeniu do gry.</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportToLeader">
+        <Key ID="STR_bia_Back_To_Game_TeleportToLeader">
             <English>Teleport to leader</English>
             <Polish>Teleportuj do dowódcy</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportToLeader_Description">
+        <Key ID="STR_bia_Back_To_Game_TeleportToLeader_Description">
             <English>Allow player teleportation to his group leader.</English>
             <Polish>Pozwól na teleportację do dowódcy.</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportToVehicle">
+        <Key ID="STR_bia_Back_To_Game_TeleportToVehicle">
             <English>Teleport to vehicle</English>
             <Polish>Teleportuj do pojazdu</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportToVehicle_Description">
+        <Key ID="STR_bia_Back_To_Game_TeleportToVehicle_Description">
             <English>Allow player teleportation to his last vehicle or group leader vehicle.</English>
             <Polish>Pozwól na teleportację do ostatniego pojazdu lub do pojazdu dowódcy.</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_RemoveBody">
+        <Key ID="STR_bia_Back_To_Game_RemoveBody">
             <English>Remove body</English>
             <Polish>Usuń ciało</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_RemoveBody_Description">
+        <Key ID="STR_bia_Back_To_Game_RemoveBody_Description">
             <English>Removes bodies of alive people who disconnected.</English>
             <Polish>Usuwa ciała żywych graczy, którzy wyszli z gry.</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportAsk">
+        <Key ID="STR_bia_Back_To_Game_TeleportAsk">
             <English>Looks like you were disconnected from the server. Teleport back to action?</English>
             <Polish>Chyba wyrzuciło Cię z serwera. Teleport z powrotem?</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportAgree">
+        <Key ID="STR_bia_Back_To_Game_TeleportAgree">
             <English>Teleport me</English>
             <Polish>Teleportuj mnie</Polish>
         </Key>
-        <Key ID="STR_AFM_Back_To_Game_TeleportReject">
+        <Key ID="STR_bia_Back_To_Game_TeleportReject">
             <English>Don't teleport me</English>
             <Polish>Nie teleportuj mnie</Polish>
         </Key>

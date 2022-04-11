@@ -10,7 +10,7 @@
  * All radio classes <ARRAY>
  *
  * Example:
- * [] call afm_acre_fnc_getAllRadios
+ * [] call bia_acre_fnc_getAllRadios
  *
  * Public: No
  */

@@ -12,7 +12,7 @@ Respawn can be freely enabled/disabled. When it gets disabled and there were pla
 
 ## Forcing respawn
 
-You can always force respawn using `"afm_respawn_force"` server/local event (depending on who you want to respawn, all or only some players).
+You can always force respawn using `"bia_respawn_force"` server/local event (depending on who you want to respawn, all or only some players).
 
 ### Authors
 

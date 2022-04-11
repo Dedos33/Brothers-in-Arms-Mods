@@ -1,1 +1,1 @@
-#include "\z\afm\addons\curator\script_component.hpp"
+#include "\z\bia\addons\curator\script_component.hpp"

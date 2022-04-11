@@ -1,1 +1,1 @@
-#include "\z\afm\addons\respawn\script_component.hpp"
+#include "\z\bia\addons\respawn\script_component.hpp"

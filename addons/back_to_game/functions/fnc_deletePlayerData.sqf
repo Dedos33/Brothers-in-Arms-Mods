@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [getPlayerUID player] call afm_back_to_game_fnc_deletePlayerData
+ * [getPlayerUID player] call bia_back_to_game_fnc_deletePlayerData
  *
  * Public: No
  */

@@ -1,1 +1,1 @@
-#include "\z\afm\addons\insurgents\script_component.hpp"
+#include "\z\bia\addons\insurgents\script_component.hpp"

@@ -10,7 +10,7 @@
  * 0: Is unconscious <BOOL>
  *
  * Example:
- * [player] call afm_common_fnc_isUnconscious
+ * [player] call bia_common_fnc_isUnconscious
  *
  * Public: No
  */

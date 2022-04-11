@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 /*
  * Author: veteran29
- * Join ArmaForces server from main menu.
+ * Join BrothersInArms server from main menu.
  * Based on article from KillZonekid
  *
  * Arguments:
@@ -26,10 +26,10 @@ if (isNil "CBA_fnc_log") then {
 // Disable Enchanced Multiplayer Menu for compatiblity with this script
 uiNamespace setVariable ["EMM_multiplayerMenu_enabled", false];
 
-INFO("Auto joining to ArmaForces server");
+INFO("Auto joining to Brothers In Arms server");
 
-GVAR(serverAddress) = "server.armaforces.com";
-GVAR(serverPort) = "2302";
+GVAR(serverAddress) = "213.239.207.246";
+GVAR(serverPort) = "2305";
 GVAR(joinTimeout) = diag_tickTime + 5;
 
 // "Click" server browser from main menu

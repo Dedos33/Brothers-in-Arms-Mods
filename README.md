@@ -2,23 +2,23 @@
     <img src="https://avatars2.githubusercontent.com/u/50863181">
 </p>
 <p align="center">
-    <a href="https://github.com/ArmaForces/Mods/issues">
-        <img src="https://img.shields.io/github/issues-raw/ArmaForces/Mods.svg?label=Issues" alt="ArmaForces Mods Issues">
+    <a href="https://github.com/BrothersInArms/Mods/issues">
+        <img src="https://img.shields.io/github/issues-raw/BrothersInArms/Mods.svg?label=Issues" alt="BrothersInArms Mods Issues">
     </a>
-    <a href="https://github.com/ArmaForces/Mods/blob/master/LICENSE">
-        <img src="https://img.shields.io/badge/License-GPLv2-red.svg" alt="ArmaForces Mods License">
+    <a href="https://github.com/BrothersInArms/Mods/blob/master/LICENSE">
+        <img src="https://img.shields.io/badge/License-GPLv2-red.svg" alt="BrothersInArms Mods License">
     </a>
-    <a href="https://github.com/ArmaForces/Mods/actions">
-        <img src="https://github.com/ArmaForces/Mods/workflows/Arma/badge.svg">
+    <a href="https://github.com/BrothersInArms/Mods/actions">
+        <img src="https://github.com/BrothersInArms/Mods/workflows/Arma/badge.svg">
     </a>
 </p>
 <p align="center"><sup><strong>Requires the latest version of <a href="https://github.com/CBATeam/CBA_A3/releases/latest">CBA</a>.</strong></sup></p>
 
-**ArmaForces Mods** is a collaborative effort by the members of <a href="https//armaforces.com/">ArmaForces</a>, polish Arma 3 community.
+**BrothersInArms Mods** is a collaborative effort by the members of <a href="https//BrothersInArms.com/">BrothersInArms</a>, polish Arma 3 community.
 
 Main purpose of this addon is to bend and adjust Arma 3 game features to the Group gameplay needs and style.
 
-The mod is on the same foundation as the ACE3 mod, using its framework, systems, tools and standards. It is entirely **open-source** and licensed under the GNU General Public License ([GPLv2](https://github.com/ArmaForces/Mods/blob/master/LICENSE)).
+The mod is on the same foundation as the ACE3 mod, using its framework, systems, tools and standards. It is entirely **open-source** and licensed under the GNU General Public License ([GPLv2](https://github.com/BrothersInArms/Mods/blob/master/LICENSE)).
 
 Huge appreciation and thanks to [ACE3 Team](http://ace3mod.com/team.html) for their open-source nature and permission to use their systems.
 

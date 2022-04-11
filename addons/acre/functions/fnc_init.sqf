@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call afm_acre_fnc_init
+ * call bia_acre_fnc_init
  *
  * Public: No
  */

@@ -8,10 +8,10 @@
  * 1: Number <NUMBER>
  *
  * Return Value:
- * <STRING> Eg. afm_acre_BLUFORChannelName1
+ * <STRING> Eg. bia_acre_BLUFORChannelName1
  *
  * Example:
- * [WEST, 1] call afm_acre_fnc_getSideChannelNumberVariableName
+ * [WEST, 1] call bia_acre_fnc_getSideChannelNumberVariableName
  *
  * Public: No
  */

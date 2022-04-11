@@ -11,7 +11,7 @@
  * Radio display value <STRING>
  *
  * Example:
- * ["acre_prc152_id_1", configFile >> "CfgWeapons" >> "acre_prc152"] call afm_acre_fnc_getRadioDisplayName
+ * ["acre_prc152_id_1", configFile >> "CfgWeapons" >> "acre_prc152"] call bia_acre_fnc_getRadioDisplayName
  *
  * Public: Yes
  */

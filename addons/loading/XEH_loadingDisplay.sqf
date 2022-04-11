@@ -2,7 +2,7 @@
 #include "\a3\ui_f\hpp\defineResinclDesign.inc"
 /*
  * Author: veteran29
- * Initializes loading screen display and adds ArmaForces branding.
+ * Initializes loading screen display and adds BrothersInArms branding.
  *
  * Arguments:
  * 0: Loading display <DISPLAY>

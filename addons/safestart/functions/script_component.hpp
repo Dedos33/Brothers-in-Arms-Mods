@@ -1,1 +1,1 @@
-#include "\z\afm\addons\safestart\script_component.hpp"
+#include "\z\bia\addons\safestart\script_component.hpp"

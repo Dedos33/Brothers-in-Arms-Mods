@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [player] call afm_spectator_fnc_stop
+ * [player] call bia_spectator_fnc_stop
  *
  * Public: No
  */

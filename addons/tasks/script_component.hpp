@@ -1,5 +1,5 @@
 #define COMPONENT tasks
-#include "\z\afm\addons\main\script_mod.hpp"
+#include "\z\bia\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -11,7 +11,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_TASKS
 #endif
 
-#include "\z\afm\addons\main\script_macros.hpp"
+#include "\z\bia\addons\main\script_macros.hpp"
 
 #define DEFAULT_TITLE_FORMAT "STR_Task_%1_Title"
 #define DEFAULT_TITLE_FORMAT_WITH_COMPONENT "STR_%1_Task_%2_Title"

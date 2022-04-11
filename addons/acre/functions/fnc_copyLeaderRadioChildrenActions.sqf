@@ -10,7 +10,7 @@
  * List of actions with radios that are both on target and his leader <ARRAY>
  *
  * Example:
- * [player] call afm_acre_fnc_copyLeaderRadioChildrenActions
+ * [player] call bia_acre_fnc_copyLeaderRadioChildrenActions
  *
  * Public: No
  */

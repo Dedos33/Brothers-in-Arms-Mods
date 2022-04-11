@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="AFM">
+<Project name="bia">
     <Package name="Main">
-        <Key ID="STR_AFM_Main_Attributes">
-            <English>ArmaForces Attributes</English>
-            <Polish>Atrybuty ArmaForces</Polish>
+        <Key ID="STR_bia_Main_Attributes">
+            <English>BrothersInArms Attributes</English>
+            <Polish>Atrybuty BrothersInArms</Polish>
         </Key>
-        <Key ID="STR_AFM_Main_Category">
-            <English>ArmaForces</English>
+        <Key ID="STR_bia_Main_Category">
+            <English>BrothersInArms</English>
         </Key>
-        <Key ID="STR_AFM_Main_Toolbar">
-            <English>ArmaForces</English>
+        <Key ID="STR_bia_Main_Toolbar">
+            <English>BrothersInArms</English>
         </Key>
-        <Key ID="STR_AFM_Main_ToolbarWiki">
+        <Key ID="STR_bia_Main_ToolbarWiki">
             <English>Wiki</English>
         </Key>
     </Package>

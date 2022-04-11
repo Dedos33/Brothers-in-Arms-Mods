@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * ["STR_USRACT_THROW"] call afm_safestart_fnc_openKeybinding
+ * ["STR_USRACT_THROW"] call bia_safestart_fnc_openKeybinding
  *
  * Public: No
  */

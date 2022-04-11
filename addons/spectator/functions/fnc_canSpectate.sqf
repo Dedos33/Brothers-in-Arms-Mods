@@ -10,7 +10,7 @@
  * Can spectate <BOOL>
  *
  * Example:
- * [player] call afm_spectator_fnc_canSpectate
+ * [player] call bia_spectator_fnc_canSpectate
  *
  * Public: No
  */

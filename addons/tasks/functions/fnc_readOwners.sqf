@@ -10,7 +10,7 @@
  * 0: Processed task owners <ARRAY>
  *
  * Example:
- * [["true", "west", "bob", "rob_group"]] call afm_main_fnc_example
+ * [["true", "west", "bob", "rob_group"]] call bia_main_fnc_example
  *
  * Public: No
  */

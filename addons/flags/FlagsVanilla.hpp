@@ -1,5 +1,5 @@
 #define FLAG(COUNTRY) class GVAR(COUNTRY): Flag_White_F { \
-    author = "ArmaForces, A3"; \
+    author = "BrothersInArms, A3"; \
     displayName = QUOTE(Flag (##COUNTRY##)); \
 \
     class EventHandlers { \
@@ -29,7 +29,7 @@ FLAG(Slovenia);
 FLAG(Spain);
 
 class GVAR(Russia): Flag_White_F {
-    author = "ArmaForces, A3";
+    author = "BrothersInArms, A3";
     displayName = "Flag (Russia)";
 
     class EventHandlers {

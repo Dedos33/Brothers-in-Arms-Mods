@@ -1,1 +1,1 @@
-#include "\z\afm\addons\flags\script_component.hpp"
+#include "\z\bia\addons\flags\script_component.hpp"

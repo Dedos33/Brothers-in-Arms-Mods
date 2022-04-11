@@ -10,7 +10,7 @@
  * 0: New spectator state <BOOL>
  *
  * Example:
- * [true] call afm_spectator_fnc_toggle
+ * [true] call bia_spectator_fnc_toggle
  *
  * Public: No
  */

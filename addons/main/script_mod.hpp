@@ -1,5 +1,5 @@
 #define MAINPREFIX z
-#define PREFIX afm
+#define PREFIX bia
 
 #include "script_version.hpp"
 
@@ -10,7 +10,7 @@
 #define REQUIRED_VERSION 2.00
 
 #ifdef COMPONENT_BEAUTIFIED
-    #define COMPONENT_NAME QUOTE(AFM - COMPONENT_BEAUTIFIED)
+    #define COMPONENT_NAME QUOTE(bia - COMPONENT_BEAUTIFIED)
 #else
-    #define COMPONENT_NAME QUOTE(AFM - COMPONENT)
+    #define COMPONENT_NAME QUOTE(bia - COMPONENT)
 #endif

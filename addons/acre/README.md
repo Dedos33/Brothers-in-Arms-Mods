@@ -1,6 +1,6 @@
 ## ACRE
 
-Standard ArmaForces ACRE framework for missions.
+Standard BrothersInArms ACRE framework for missions.
 
 ## Mission modules out, CBA settings is my best friend
 

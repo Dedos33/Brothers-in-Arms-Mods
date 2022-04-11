@@ -7,10 +7,10 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "afm_main",
-            "afm_debug_console"
+            "bia_main",
+            "bia_debug_console"
         };
-        author = "ArmaForces";
+        author = "BrothersInArms";
         VERSION_CONFIG;
     };
 };

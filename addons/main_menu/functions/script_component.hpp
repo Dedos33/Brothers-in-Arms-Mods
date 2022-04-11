@@ -1,1 +1,1 @@
-#include "\z\afm\addons\main_menu\script_component.hpp"
+#include "\z\bia\addons\main_menu\script_component.hpp"

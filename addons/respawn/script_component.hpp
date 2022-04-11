@@ -1,5 +1,5 @@
 #define COMPONENT respawn
-#include "\z\afm\addons\main\script_mod.hpp"
+#include "\z\bia\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -11,7 +11,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_RESPAWN
 #endif
 
-#include "\z\afm\addons\main\script_macros.hpp"
+#include "\z\bia\addons\main\script_macros.hpp"
 
 #define TIME_DISABLED 1e10
 #define TIME_MINIMUM 1

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="MadinAi">
+    <Key ID="STR_MadinAI_activation">
+        <Original>Activation distance</Original>
+        <Polish>Odległość aktywacji</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_activationShort">
+        <Original>Distance from module area that will activate it. If the module has its own area of operation, the distance will be added up.</Original>
+        <Polish>Odległość od obszaru modułu która spowoduje aktywację. Jeśli moduł posiada własny teren działania, odległość zostanie zsumowana.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_tickets">
+        <Original>Tickets</Original>
+        <Polish>Tickety</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_ticketsShort">
+        <Original>Number of spawns bots. In special cases, it may be slightly larger.</Original>
+        <Polish>Ilość spawnowanych botów. W szczególnych przypadkach może być minimalnie większa.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_minDist">
+        <Original>Minimal distance</Original>
+        <Polish>Minimalna odległość</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_minDistShort">
+        <Original>Minimal distance of players from buildings. The building will be removed from the pool and the bots will spawn.</Original>
+        <Polish>Minimalna odległość graczy od budynków. Budynek zostanie usunięty z puli, a boty zespawnowane.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_patrolCount">
+        <Original>Patrol units</Original>
+        <Polish>Jednostki patrolujące</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_patrolCountShort">
+        <Original>Minimum number of patrol / spawned units</Original>
+        <Polish>Minimalna ilość jednostek patrolujących / spawnowanych na bieżąco.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_limitBuilding">
+        <Original>Limit per building</Original>
+        <Polish>Limit na budynek</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_limitBuildingShort">
+        <Original>How many times bots can go from one building.</Original>
+        <Polish>Ile razy maksymalnie mogą wyjść boty z jednego budynku.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_ticketsPoint">
+        <Original>Tickets</Original>
+        <Polish>Tickety</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_ticketsPointShort">
+        <Original>Number of additional spawned bots.</Original>
+        <Polish>Ilość dodatkowo spawnowanych botów.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_minDistPoint">
+        <Original>Minimal distance</Original>
+        <Polish>Minimalna odległość</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_minDistPointShort">
+        <Original>Minimal distance between the players and the spawner. When the player gets closer, the spawner will be removed and the bot will be spawned.</Original>
+        <Polish>Minimalna odległość graczy od spawnera. Gdy gracz znajdzie się bliżej, spawner zostanie usunięty, a bot zespawnowany.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_activationPoint">
+        <Original>Activation distance</Original>
+        <Polish>Odległość aktywacji</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_activationPointShort">
+        <Original>The distance from which the bots will be spawned (in the same positions as in 3den). -1 to not remove the bots on start. Recommended values above ~1000 (depending on visibility / terrain).</Original>
+        <Polish>Odległość, od której boty zostaną zespawnowane (na tych samych pozycjach co w 3den). -1 by nie usuwać botów na start. Zalecane wartości powyżej ~1000 (zależnie od widoczności / terenu).</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_addToZeus">
+        <Original>Add to zeus</Original>
+        <Polish>Dodaj do zeusa</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_addToZeusShort">
+        <Original>New unit will be added to the zeus.</Original>
+        <Polish>Nowa jednostka zostanie dodana do zeusa.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_executionCodeUnit">
+        <Original>Code executed on unit spawn</Original>
+        <Polish>Kod wykonywany podczas spawu jednostki</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_executionCodeUnitShort">
+        <Original>Code executed after unit spawn. Passed parameters [_unit]</Original>
+        <Polish>Kod wykonywany po spawnowanie jednostki. Przekazywane parametry [_unit]</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_civiliansType">
+        <Original>Civilians type</Original>
+        <Polish>Rodzaj cywili</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_civiliansTypeShort">
+        <Original>Type of civilians used in the module. Synchronized units are also used, along with their loadout.</Original>
+        <Polish>Rodzaj cywili używany w module. Zsynchronizowane jednostki również są używane, razem z ich loadoutem.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_includeAir">
+        <Original>Plane/heli activation</Original>
+        <Polish>Aktywacja przy pomocy helikoptera/samolotu</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_includeAirShort">
+        <Original>Module activation will take into account players in the aircrafts.</Original>
+        <Polish>Moduł do sprawdzania aktywacji będzie brał pod uwagę graczy znajdujących się w pojazdach powietrznych.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_civiliansCount">
+        <Original>Number of civilians</Original>
+        <Polish>Ilość cywili</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_civiliansCountShort">
+        <Original>Number of spawned civilians. Spawn only in buildings, compatible with CBA_building.</Original>
+        <Polish>Ilość zepsawnowanych cywili. Cywile spawnowani jedynie w budynkach, kompatybilne z CBA_building.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_buildingsDistance">
+        <Original>Buildings distance</Original>
+        <Polish>Odległość budynków</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_buildingsDistanceShort">
+        <Original>If any of the buildings in the given radius will be destroyed, the module will be turned off.</Original>
+        <Polish>Jeśli którykolwiek z budynków w podanym promieniu zostanie zniszczony, moduł zostanie wyłączony.</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_deactivation">
+        <Original>Deactivation distance</Original>
+        <Polish>Odległość deaktywacji</Polish>
+    </Key>
+    <Key ID="STR_MadinAI_deactivationShort">
+        <Original>Distance increased by the given value to the activation distance. If there are no more players in the area, the units will be removed.</Original>
+        <Polish>Odległość powiększona o podaną wartość do odległość aktywacji. Jeśli w danym rejonie nie znajdują już się gracze, jednostki zostaną usunięte.</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiEnable">
+        <Original>Enable "Madin AI"</Original>
+        <Polish>Uruchom "Madinowe AI"</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiEnableShort">
+        <Original>Additional AI</Original>
+        <Polish>Poprawki AI</Polish>
+    </Key>
+    <Key ID="STR_MAI_moveDistance">
+        <Original>Move distance</Original>
+        <Polish>Odległość poruszania</Polish>
+    </Key>
+    <Key ID="STR_MAI_moveDistanceShort">
+        <Original>The distance AI will chase players.</Original>
+        <Polish>Odległość, do której AI będzie gonić graczy.</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiForceFormation">
+        <Original>Force move / formation</Original>
+        <Polish>Wymuszony ruch / formacja</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiForceFormationShort">
+        <Original>Force AI to move to waypoint placed by zeus.</Original>
+        <Polish>AI natychmiast wyruszy do waypoint postawionego przez zeusa.</Polish>
+    </Key>
+    <Key ID="STR_MAI_suppressFactor">
+        <Original>Suppress decay slowdown</Original>
+        <Polish>Spowolnienie zaniku przygwożdżenia</Polish>
+    </Key>
+    <Key ID="STR_MAI_suppressFactorShort">
+        <Original>Additional slowdown of the disappearance of the suppress, longer than the set 'courage' to 0. 0 means no additional slowdown, 1 bot will be allways suppressed.</Original>
+        <Polish>Dodatkowe spowolnienie zaniku przygwożdżenia, dłuższego niż ustawione 'courage' na 0. 0 oznacza brak dodatkowego spowolnienia, 1 bot będzie ciągle przygwożdżony.</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDfactor">
+        <Original>PTSD recovery factor</Original>
+        <Polish>Współczynnik zaniku PTSD.</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDfactorShort">
+        <Original>Zanik PTSD</Original>
+        <Polish>Współczynnik zaniku PTSD.</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDhit">
+        <Original>PTSD on hit</Original>
+        <Polish>PTSD na obrażenia</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDhitShort">
+        <Original>How much AI group will get PTSD for damage received (*multiplied by a PTSD factor)</Original>
+        <Polish>Ile grupa AI dostanie PTSD na otrzymane obrażenia (*pomnożone przez współczynnik PTSD).</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDkilled">
+        <Original>PTSD on killed</Original>
+        <Polish>PTSD po śmierci</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDkilledShort">
+        <Original>PTSD killed</Original>
+        <Polish>Ile grupa dostanie PTSD po zabiciu członka grupy (*pomnożone przez współczynnik PTSD).</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDsuppress">
+        <Original>PTSD amount on suppress</Original>
+        <Polish>PTSD na przygwożdżenie</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDsuppressShort">
+        <Original>How much AI group will receive PTSD per suppress (multiplied by the suppress value and *PTSD factor).</Original>
+        <Polish>Ile grupa AI będzie dostawała PTSD na przygwożdżenie (mnożone przez wartość przygwożdżenia oraz *współczynnik PTSD).</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDstopMove">
+        <Original>PTSD stop bots</Original>
+        <Polish>PTSD zatrzymaj boty</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDstopMoveShort">
+        <Original>How much PTSD bots need have to stop attacking / removing waypoints. Waypoints will not be deleted if placed by zeus.</Original>
+        <Polish>Ile PTSD muszą dostać boty, by przestać atakować/usunąć waypointy. Waypointy nie zostaną usunięte, jeśli te zostały postawione przez zeusa.</Polish>
+    </Key>
+    <Key ID="STR_MAI_allowFlee">
+        <Original>Allow flee</Original>
+        <Polish>Pozwól na ucieczkę</Polish>
+    </Key>
+    <Key ID="STR_MAI_allowFleeShort">
+        <Original>Allow bots to flee when certain PTSD level is reached.</Original>
+        <Polish>Pozwól botom uciekać gdy określony poziom PTSD zostanie osiągnięty.</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDflee">
+        <Original>PTSD flee</Original>
+        <Polish>PTSD ucieczka</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDfleeShort">
+        <Original>How much PTSD bots need have to start running / seeking cover in buildings. Overwrites zeus commands, returns to the waypoints set by zeus after flee.</Original>
+        <Polish>Ile PTSD muszą dostać boty, by zacząć uciekać/szukać schronienia. Nadpisuje polecenie zeusa, wraca do waypointów ustawionych przez zeusa po zakończeniu ucieczki.</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDfleeDistance">
+        <Original>PTSD flee distance</Original>
+        <Polish>PTSD odległość ucieczki</Polish>
+    </Key>
+    <Key ID="STR_MAI_PTSDfleeDistanceShort">
+        <Original>How far the bots will run</Original>
+        <Polish>Jak daleko boty będą uciekać.</Polish>
+    </Key>
+    <Key ID="STR_MAI_objSightDistance">
+        <Original>Distance for bots</Original>
+        <Polish>Odległość dla botów</Polish>
+    </Key>
+    <Key ID="STR_MAI_objSightDistanceShort">
+        <Original>The distance from the bot to the bushes / trees, the amount of which will be taken into account in reducing the view range (spotDistance/spotTistance).</Original>
+        <Polish>Odległość od bota do krzaków/drzew, których ilość zostanie wzięta pod uwagę w obniżeniu zasięgu widzenia (spotDistance/spotTistance).</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiSightCoefFactor">
+        <Original>Visibility penalty</Original>
+        <Polish>Kara do widoczności</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiSightCoefFactorShort">
+        <Original>By what value reduce the view distace skill for each object.</Original>
+        <Polish>O ile zmniejszyć skill zasięgu widzenia na każdy obiekt.</Polish>
+    </Key>
+    <Key ID="STR_MAI_camoObjDistance">
+        <Original>Camouflage distance</Original>
+        <Polish>Odległość kamuflażu</Polish>
+    </Key>
+    <Key ID="STR_MAI_camoObjDistanceShort">
+        <Original>The distance from the player to the bushes / trees, the number of which will be taken into account in reducing the player's visibility (camouflageCoef).</Original>
+        <Polish>Odległość od gracza do krzaków/drzew, których ilość zostanie wzięta pod uwagę w obniżeniu widoczności gracza (camouflageCoef).</Polish>
+    </Key>
+    <Key ID="STR_MAI_camoCoefFactor">
+        <Original>Camouflage increase</Original>
+        <Polish>Zwiększenie kamuflażu</Polish>
+    </Key>
+    <Key ID="STR_MAI_camoCoefFactorShort">
+        <Original>How much reduce player visibility for bots for each object.</Original>
+        <Polish>O ile zmniejszyć widoczność gracza dla botów na każdy obiekt.</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiSkillAdjust">
+        <Original>Skill on start</Original>
+        <Polish>Skill na start</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiSkillAdjustShort">
+        <Original>Set this skill to every AI.</Original>
+        <Polish>Ustaw wszystkim AI podany skill.</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiBonusMags">
+        <Original>Additional mags</Original>
+        <Polish>Dodatkowe magazynki</Polish>
+    </Key>
+    <Key ID="STR_MAI_AiBonusMagsShort">
+        <Original>Bots will get a % chance of getting a new magazine after reloading. Recommended when using "Madin AI RHS / CBA compat" for more frequent AI firing (as a separate mod on WorkShop). -1 to switch off.</Original>
+        <Polish>Boty dostaną % szans na dostanie nowego magazynku do broni po przeładowaniu. Zalecane przy używaniu modułu częstszego ostrzału od botów "Madin AI RHS/CBA compat"(jako oddzielny mod na WorkShop). -1 by wyłączyć.</Polish>
+    </Key>
+    <Key ID="STR_MAI_enableAimPenalty">
+        <Original>Penalty for aiming</Original>
+        <Polish>Kara do celności</Polish>
+    </Key>
+    <Key ID="STR_MAI_enableAimPenaltyShort">
+        <Original>AI receives greater accuracy penalties. After each hit, the bot's accuracy drops to a set value. Accuracy comes back over time.</Original>
+        <Polish>AI otrzymuje większe kary do celności. Po każdym trafieniu celność bota spada do określonej wartości. Celność wraca z czasem.</Polish>
+    </Key>
+    <Key ID="STR_MAI_aimPenaltyTime">
+        <Original>Penalty time</Original>
+        <Polish>Czas kary</Polish>
+    </Key>
+    <Key ID="STR_MAI_aimPenaltyTimeShort">
+        <Original>How many seconds will the accuracy penalty take after each hit.</Original>
+        <Polish>Ile sekund będzie trwała kara do celności po każdym trafieniu.</Polish>
+    </Key>
+    <Key ID="STR_MAI_aimPenaltyStrength">
+        <Original>Penalty strength</Original>
+        <Polish>Siła kary</Polish>
+    </Key>
+    <Key ID="STR_MAI_aimPenaltyStrengthShort">
+        <Original>Multiplier of penalty value to accuracy.</Original>
+        <Polish>Mnożnik wartości kary do celności.</Polish>
+    </Key>
+    <Key ID="STR_MAI_aimPenaltyMax">
+        <Original>Max penalty</Original>
+        <Polish>Maksymalna siła kary</Polish>
+    </Key>
+    <Key ID="STR_MAI_aimPenaltyMaxShort">
+        <Original>The penalty for accuracy will not be greater than that given. values above 30-50 may give "unusual" effects. Aim penalty = Penalty time left * Penalty strength. The penalty is half as much in vehicles.</Original>
+        <Polish>Kara do celności nie będzie większa od podanej. wartości powyżej 30-50 mogą dać "nietypowe" efekty. Kara celności = pozostały czas kary * siła kary. Kara jest o połowę mniejsza w pojazdach.</Polish>
+    </Key>
+    <Key ID="STR_MAI_AIgroupEnableAi">
+        <Original>Madin AI</Original>
+        <Polish>Madin AI</Polish>
+    </Key>
+	    <Key ID="STR_MAI_AIgroupEnableAiTip">
+        <Original>Enable Madin AI for group.</Original>
+        <Polish>Uruchom Madin AI dla grupy.</Polish>
+    </Key>
+</Project>

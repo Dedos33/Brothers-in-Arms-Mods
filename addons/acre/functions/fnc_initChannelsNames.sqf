@@ -13,9 +13,9 @@
  *
  * Example:
  * Set WEST channel names for WEST side:
- * [WEST] call afm_acre_fnc_initNameChannelsModule;
+ * [WEST] call bia_acre_fnc_initNameChannelsModule;
  * Set CIVILIAN channel names for all sides
- * [CIVILIAN, true] call afm_acre_fnc_initNameChannelsModule; //
+ * [CIVILIAN, true] call bia_acre_fnc_initNameChannelsModule; //
  *
  * Public: No
  */

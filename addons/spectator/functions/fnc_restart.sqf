@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * call afm_spectator_fnc_restart
+ * call bia_spectator_fnc_restart
  *
  * Public: No
  */

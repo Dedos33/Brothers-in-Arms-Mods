@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [_function, _args] call afm_common_fnc_runAfterSettingsInit
+ * [_function, _args] call bia_common_fnc_runAfterSettingsInit
  *
  * Public: No
  */

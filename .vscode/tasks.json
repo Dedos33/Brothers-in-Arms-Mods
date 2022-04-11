@@ -4,7 +4,7 @@
         {
             "label": "HEMTT Build",
             "type": "shell",
-            "command": "hemtt build",
+            "command": ".\\hemtt build",
             "group": {
                 "kind": "build",
                 "isDefault": true

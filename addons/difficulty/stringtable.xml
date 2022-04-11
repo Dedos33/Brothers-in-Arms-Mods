@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="AFM">
+<Project name="bia">
     <Package name="Difficulty">
-        <Key ID="STR_AFM_Difficulty_DifficultyName">
-            <English>ArmaForces</English>
+        <Key ID="STR_bia_Difficulty_DifficultyName">
+            <English>BrothersInArms</English>
         </Key>
-        <Key ID="STR_AFM_Difficulty_DifficultyDescription">
-            <English>Custom ArmaForces settings.</English>
-            <Polish>Własne ustawienia ArmaForces.</Polish>
+        <Key ID="STR_bia_Difficulty_DifficultyDescription">
+            <English>Custom BrothersInArms settings.</English>
+            <Polish>Własne ustawienia BrothersInArms.</Polish>
         </Key>
     </Package>
 </Project>

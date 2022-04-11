@@ -20,12 +20,12 @@
 #define ACELSTRING(module,string)   QUOTE(TRIPLES(STR,DOUBLES(ACE_PREFIX,module),string))
 #define ACECSTRING(module,string)   QUOTE(TRIPLES($STR,DOUBLES(ACE_PREFIX,module),string))
 
-// AFM macros
+// bia macros
 #define IS_MOD_LOADED(modclass)     (isClass (configFile >> "CfgPatches" >> #modclass))
 
 // Extension macros
-#define EXT "armaforces_mods"
-#define EXT_LOG "armaforces_mods_log"
+#define EXT "BrothersInArms_mods"
+#define EXT_LOG "BrothersInArms_mods_log"
 
-// AFM Debug macros
-#include "\z\afm\addons\main\script_debug.hpp"
+// bia Debug macros
+#include "\z\bia\addons\main\script_debug.hpp"

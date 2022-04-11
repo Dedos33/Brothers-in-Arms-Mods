@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="AFM">
+<Project name="bia">
     <Package name="Common">
-        <Key ID="STR_AFM_Common_DisplayName">
-            <English>ArmaForces - Common</English>
-            <Polish>ArmaForces - Common</Polish>
+        <Key ID="STR_bia_Common_DisplayName">
+            <English>BrothersInArms - Common</English>
+            <Polish>BrothersInArms - Common</Polish>
         </Key>
-        <Key ID="STR_AFM_Common_Enabled">
+        <Key ID="STR_bia_Common_Enabled">
             <English>Enable component</English>
             <Polish>Włącz komponent</Polish>
         </Key>
-        <Key ID="STR_AFM_Common_Enabled_Description">
+        <Key ID="STR_bia_Common_Enabled_Description">
             <English>Controls whether this component is active.</English>
             <Polish>Pozwala kontrolować czy komponent jest włączony.</Polish>
         </Key>

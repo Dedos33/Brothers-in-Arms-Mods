@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [player, getPlayerUID player] call afm_back_to_game_fnc_savePlayerData
+ * [player, getPlayerUID player] call bia_back_to_game_fnc_savePlayerData
  *
  * Public: No
  */

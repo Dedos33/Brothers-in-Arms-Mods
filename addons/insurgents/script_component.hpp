@@ -1,5 +1,5 @@
 #define COMPONENT insurgents
-#include "\z\afm\addons\main\script_mod.hpp"
+#include "\z\bia\addons\main\script_mod.hpp"
 
 #define DEBUG_SYNCHRONOUS
 
@@ -13,7 +13,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_INSURGENTS
 #endif
 
-#include "\z\afm\addons\main\script_macros.hpp"
+#include "\z\bia\addons\main\script_macros.hpp"
 
 #define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch",""]]
 

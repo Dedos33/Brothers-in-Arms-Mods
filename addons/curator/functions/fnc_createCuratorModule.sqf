@@ -10,7 +10,7 @@
  * 0: New curator module <OBJECT>
  *
  * Example:
- * call afm_curator_fnc_createCuratorModule
+ * call bia_curator_fnc_createCuratorModule
  *
  * Public: No
  */

@@ -14,7 +14,7 @@
  * List of actions with leader channels that can be set on parent node radio <ARRAY>
  *
  * Example:
- * [player, nil, ["ACRE_PRC343_ID1", ["ACRE_PRC343_ID2", "ACRE_PRC343_ID3"]]] call afm_acre_fnc_copyLeaderSingleRadioChildrenActions
+ * [player, nil, ["ACRE_PRC343_ID1", ["ACRE_PRC343_ID2", "ACRE_PRC343_ID3"]]] call bia_acre_fnc_copyLeaderSingleRadioChildrenActions
  *
  * Public: No
  */

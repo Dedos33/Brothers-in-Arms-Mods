@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="AFM">
+<Project name="bia">
     <Package name="Fries">
-        <Key ID="STR_AFM_Fries_DisplayName">
-            <English>ArmaForces - FRIES</English>
-            <Polish>ArmaForces - FRIES</Polish>
+        <Key ID="STR_bia_Fries_DisplayName">
+            <English>BrothersInArms - FRIES</English>
+            <Polish>BrothersInArms - FRIES</Polish>
         </Key>
-        <Key ID="STR_AFM_Fries_AutoAdd">
+        <Key ID="STR_bia_Fries_AutoAdd">
             <English>Auto add FRIES</English>
             <Polish>Auto dodawanie FRIES</Polish>
         </Key>
-        <Key ID="STR_AFM_Fries_AutoAdd_Description">
+        <Key ID="STR_bia_Fries_AutoAdd_Description">
             <English>Automatically add FRIES to helicopters that support them.</English>
             <Polish>Automatycznie dodawaj FRIES do śmigłowców które je wspierają.</Polish>
         </Key>
