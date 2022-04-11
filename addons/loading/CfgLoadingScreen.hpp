@@ -6,8 +6,10 @@
 
 class GVAR(CfgLoadingScreen) {
     class Backgrounds {
-        LOADING_SCREEN_CLASS(sccren_1,Dedos);
-        LOADING_SCREEN_CLASS(sccren_2,Dedos);
-        LOADING_SCREEN_CLASS(sccren_3,Dedos);
+        LOADING_SCREEN_CLASS(screen_1,Dedos);
+        LOADING_SCREEN_CLASS(screen_2,Dedos);
+        LOADING_SCREEN_CLASS(screen_3,Dedos);
+        LOADING_SCREEN_CLASS(screen_4,Azvel);
+        LOADING_SCREEN_CLASS(screen_5,Azvel);
     };
 };
