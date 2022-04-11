@@ -4,7 +4,7 @@ class CfgFactionClasses
 	class NO_CATEGORY;
 	class MAI_Modules: NO_CATEGORY
 	{
-		displayName = "Armaforces - MAI";
+		displayName = "Brothers in Arms - MAI";
 		//side = 7;
 	};
 };
