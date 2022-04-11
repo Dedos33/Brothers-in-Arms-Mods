@@ -2,7 +2,9 @@
 
 // if debug enabled allow function recompilation
 // makes life easier with filepatching
-#ifdef MADIN_DEBUG
+#define MAI_DEBUG 1
+
+#ifdef MAI_DEBUG
 	#define FUNCTION_RECOMPILE		1
 #else
 	#define FUNCTION_RECOMPILE		0
@@ -10,11 +12,11 @@
 
 class CfgFunctions
 {
-	class MadinAI {
+	class MAI {
 
 		class AI {
 
-			file = "MadinAI\framework\main\functions\AI";
+			file = "MAI\framework\main\functions\AI";
 
 			class AiPTSDamnesia {
 				recompile = FUNCTION_RECOMPILE;
@@ -107,7 +109,7 @@ class CfgFunctions
 
 		class general {
 
-			file = "MadinAI\framework\main\functions\general";
+			file = "MAI\framework\main\functions\general";
 
 			class HCfind {
 				recompile = FUNCTION_RECOMPILE;
@@ -117,24 +119,62 @@ class CfgFunctions
 				recompile = FUNCTION_RECOMPILE;
 			};
 
+			class patrolRandomWaypoints {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class expectedNewUnitsCountReturn {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class moveInVehicleRole {
+				recompile = FUNCTION_RECOMPILE;
+			};
+			class checkActivateConditions {
+				recompile = FUNCTION_RECOMPILE;
+			};
+			class getVehicleInfo {
+				recompile = FUNCTION_RECOMPILE;
+			};
+			class createVehicleFromInfo {
+				recompile = FUNCTION_RECOMPILE;
+			};
+		};
+
+		class players {
+
+			file = "MAI\framework\main\functions\players";
+
+			class playerCamoCoef {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class playerInit {
+				postInit = 1;
+				recompile = FUNCTION_RECOMPILE;
+			};
 		};
 
 		class buildspawn {
 
-			file = "MadinAI\framework\main\functions\buildSpawn";
+			file = "MAI\framework\main\functions\buildSpawn";
 
 			class buildSpawnFirstState {
 				recompile = FUNCTION_RECOMPILE;
 			};
+
 			class buildSpawnInit {
 				recompile = FUNCTION_RECOMPILE;
 			};
+
 			class buildSpawnInitCall {
 				recompile = FUNCTION_RECOMPILE;
 			};
+
 			class buildSpawnLoop {
 				recompile = FUNCTION_RECOMPILE;
 			};
+
 			class buildSpawnWaitUntil {
 				recompile = FUNCTION_RECOMPILE;
 			};
@@ -142,36 +182,43 @@ class CfgFunctions
 			class buildSpawnGroupPatrol {
 				recompile = FUNCTION_RECOMPILE;
 			};
-		};
 
-		class respPoint {
-
-			file = "MadinAI\framework\main\functions\respPoint";
-
-			class respPointEH {
-				recompile = FUNCTION_RECOMPILE;
-			};
-			class respPointFirstState {
-				recompile = FUNCTION_RECOMPILE;
-			};
-			class respPointInit {
-				recompile = FUNCTION_RECOMPILE;
-			};
-			class respPointInitCall {
-				recompile = FUNCTION_RECOMPILE;
-			};
-			class respPointWaitUntil {
-				recompile = FUNCTION_RECOMPILE;
-			};
-			class respPointNearLoop {
+			class buildSpawnUnitDespawn {
 				recompile = FUNCTION_RECOMPILE;
 			};
 
+			class buildSpawnGroupDespawn {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class buildSpawnGroupDespawnLoop {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class buildSpawnGroupDespawnCancel {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class buildSpawnAiSpawn {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class buildSpawnPatrolCustomPos {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class buildSpawnOnKilledPatrol {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class buildSpawnLoopSpawnPatrol {
+				recompile = FUNCTION_RECOMPILE;
+			};
 		};
 
 		class civilians {
 
-			file = "MadinAI\framework\main\functions\civilians";
+			file = "MAI\framework\main\functions\civilians";
 
 			class civiliansAiMove {
 				recompile = FUNCTION_RECOMPILE;
@@ -200,11 +247,100 @@ class CfgFunctions
 			class civiliansWaitUntil {
 				recompile = FUNCTION_RECOMPILE;
 			};
+		};
 
-			class civiliansWaitUntilHc {
+		class reinforce {
+
+			file = "MAI\framework\main\functions\reinforce";
+
+			class reinforceFirstState {
 				recompile = FUNCTION_RECOMPILE;
 			};
 
+			class reinforceDespawn {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceDespawnLoop {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceInit {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceInitCall {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceSpawnVeh {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceUnload {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceUnloadFinish {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceUnloadUnits {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceVehAI {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceVehWaitToSpawn {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceWaitUntil {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceUnloadStatements {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class reinforceVehAirAI {
+				recompile = FUNCTION_RECOMPILE;
+			};
+		};
+
+		class simpleSpawn {
+
+			file = "MAI\framework\main\functions\simpleSpawn";
+
+			class simpleSpawnFirstState {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class simpleSpawnInit {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class simpleSpawnInitCall {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class simpleSpawnWaitUntil {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class simpleSpawnInterval {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class simpleSpawnGetGroups {
+				recompile = FUNCTION_RECOMPILE;
+			};
+
+			class simpleSpawnDespawn {
+				recompile = FUNCTION_RECOMPILE;
+			};
 		};
 	};
 };

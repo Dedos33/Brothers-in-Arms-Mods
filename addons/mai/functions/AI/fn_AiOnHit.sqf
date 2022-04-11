@@ -1,6 +1,6 @@
 #include "../../script_components.hpp"
  /*
-	MadinAI_fnc_AiOnHitPart
+	MAI_fnc_AiOnHitPart
 
 	Description:
 		Handles AI being HIT.
@@ -13,11 +13,11 @@
 		None
 
 */
-params ["_unit", "", "_damage"];
+params [["_unit", objNull], "", "_damage"];
 
 private _group = group _unit;
 
-if (!(_group getVariable ["MadinAI", true]) || {!local _unit || {isPlayer _unit}}) exitWith {};
+if (!(_group getVariable ["MAI_enable", true]) || {!local _unit || {isPlayer _unit}}) exitWith {};
 
 DEBUG_2("OnHit: Ai %1 Source %2", _unit, _group);
 
@@ -29,4 +29,4 @@ private _addedPTSD = _damage * MAI_PTSDhit * _PTSDfactor;
 _group setVariable ["MAI_PTSD", _currentPTSD + _addedPTSD];
 _unit setSuppression 1;
 
-nil
+Nil

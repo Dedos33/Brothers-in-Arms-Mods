@@ -1,12 +1,12 @@
 #include "../../script_components.hpp"
 /*
-    MadinAI_fnc_AiOnInit
+    MAI_fnc_AiOnInit
 
     Description:
-        No description added yet.
+        Settings for each AI on it's Init.
 
     Arguments:
-        0: Argument <DATATYPE>
+        0: Unit	<OBJECT>
 
     Return Value:
         None

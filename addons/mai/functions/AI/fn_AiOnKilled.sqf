@@ -1,6 +1,6 @@
 #include "../../script_components.hpp"
  /*
-	MadinAI_fnc_AiOnKilled
+	MAI_fnc_AiOnKilled
 
 	Description:
 		Handles AI death.
@@ -17,7 +17,7 @@ params ["_unit", "_killer"];
 
 private _group = group _unit;
 
-if (!(_group getVariable ["MadinAI", true]) || {!local _unit || {isPlayer _unit}}) exitWith {};
+if (!(_group getVariable ["MAI_enable", true]) || {!local _unit || {isPlayer _unit}}) exitWith {};
 
 DEBUG_2("OnKilled: Ai %1 Killer %2", _unit, _killer);
 

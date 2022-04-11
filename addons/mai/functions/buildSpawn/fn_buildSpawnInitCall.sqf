@@ -1,5 +1,5 @@
  /*
-	MadinAI_fnc_buildSpawnInitCall
+	MAI_fnc_buildSpawnInitCall
 
 	Description:
 		Initiate buildSpawn from 3den
@@ -23,7 +23,10 @@ switch _mode do {
 		//if (is3DEN) exitWith {
 		//["init", 0] call BIS_fnc_3DENNotification;
 		//};
-		[{_input call MadinAI_fnc_buildSpawnInit}] call CBA_fnc_directCall;
+		[
+			{_this call MAI_fnc_buildSpawnInit},
+			_input
+		] call CBA_fnc_execNextFrame;
 	};
 	// When some attributes were changed (including position and rotation)
 	case "attributesChanged3DEN": {
@@ -51,4 +54,4 @@ switch _mode do {
 		//["dragged3DEN", 0] call BIS_fnc_3DENNotification;
 	};
 };
-true
+Nil

@@ -1,18 +1,20 @@
  /*
-	MadinAI_fnc_HCfind
+	MAI_fnc_HCfind
 
 	Description:
 		find HC connected to server.
+		returns itself if not called on server.
 
 	Arguments:
 		None
 
 	Return Value:
-		Headless Cliend ID, 2(server) if not connected
+		0: Headless Cliend ID, 2(server) if not connected	<NUMBER>
 
 */
 
 if (!isMultiplayer) exitWith {0};
+if (!isServer) exitWith {clientOwner};
 private _owner = 2;
 private _allHCs = entities "HeadlessClient_F";
 {
@@ -22,4 +24,4 @@ private _allHCs = entities "HeadlessClient_F";
 if (_owner isEqualTo 0) then {
 	_owner = 2;
 };
-_owner 
+_owner

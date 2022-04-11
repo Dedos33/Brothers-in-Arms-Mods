@@ -1,8 +1,8 @@
 
 class Extended_PreInit_EventHandlers
 {
-    class MadinAI_framework_main
+    class MAI_framework_main
     {
-		init = "call compile preprocessFileLineNumbers 'MadinAI\framework\main\XEH_preInit.sqf'";
+		init = "call compile preprocessFileLineNumbers 'MAI\framework\main\XEH_preInit.sqf'";
     };
 };

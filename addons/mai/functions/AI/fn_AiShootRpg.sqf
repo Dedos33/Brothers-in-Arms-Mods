@@ -1,24 +1,23 @@
  /*
-	MadinAI_fnc_AiShootRpg
+	MAI_fnc_AiShootRpg
 
 	Description:
-		 Unit AI loop, can be switch on/off mid game in CBA settings
+		 Force AI to shoot rocket launcher by removing all other ammo.
 
 	Arguments:
 		0: Group <GROUP>
 
 	Return Value:
-		None
+		0: Can fire <BOOLEAN>
 
 */
 
-// ONLY SIMPLE WORKAROUND, AS I NEED IT FOR WTORKOWA MISJA RIGHT NOW
 params [["_unit",objNull,[objNull]],["_launcherTime",15,[0]]];
-if (isPlayer _unit)exitWith {false};
+if (isPlayer _unit) exitWith {false};
 
 // check if allready called / variable exist.
 private _fncArray = _unit getVariable ["MAI_deletedMags",[]];
-if !(_fncArray isEqualTo [])exitWith {false};
+if !(_fncArray isEqualTo []) exitWith {false};
 
 private _ammoArray = secondaryWeaponMagazine _unit;
 if (_ammoArray isEqualTo []) exitWith {false};
@@ -26,7 +25,7 @@ private _currentMag = _ammoArray select 0;
 
 private _ammo = getText (configfile >> "CfgMagazines" >> _currentMag >> "ammo");
 private _allowAgainstInfantry = getNumber (configfile >> "CfgAmmo" >> _ammo >> "allowAgainstInfantry");
-if (_allowAgainstInfantry < 1)exitWith {false};
+if (_allowAgainstInfantry < 1) exitWith {false};
 
 private _allMags = magazinesAmmoFull _unit;
 
@@ -37,7 +36,7 @@ private _deletedMags = [];
 {
 	_x params ["_class","_ammoLeft","_loaded","_weaponType","_location"];
 	private _magToLauncher = _compatibileMags findIf {_x isEqualTo _class};
-	if (_magToLauncher == -1) then{
+	if (_magToLauncher == -1) then {
 		_deletedMags pushBack _x;
 		_unit removeMagazines _class;
 	};
@@ -65,7 +64,7 @@ if !(_handgun isEqualTo "") then {
 [
 	{
 		params [["_unit",objNull,[objNull]]];
-		_unit call MadinAI_fnc_AiRestoreMagazines;
+		_unit call MAI_fnc_AiRestoreMagazines;
 	},
 	[_unit],
 	_launcherTime

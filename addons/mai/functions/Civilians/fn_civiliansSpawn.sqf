@@ -1,8 +1,8 @@
  /*
-	MadinAI_fnc_civiliansSpawn
+	MAI_fnc_civiliansSpawn
 
 	Description:
-		Initiate civilians, waitUntil condition meet
+		Spawn civilians with basic "AI".
 
 	Arguments:
 		0: Logic <OBJECT>
@@ -12,18 +12,22 @@
 
 */
 
-//[format ["isServer - %1 / civiliansSpawn",isServer]] remoteExecCall ["systemChat",0];
-params [["_logic",objNull,[objNull]]];
+params [["_logic", objNull, [objNull]]];
 
 private _pos = getPosATL _logic;
-private _distance = _logic getVariable ["distance",150];
-private _activation = _logic getVariable ["activation",650];
-private _civiliansType = _logic getVariable ["civiliansType","altis"];
-//systemChat str _civiliansType;
-private _civiliansCount = _logic getVariable ["civiliansCount",15];
-private _unitTypes = _logic getVariable ["unitTypes",[]];
-private _buildings = _logic getVariable ["buildings",[]];
-private _executionCodeUnit = _logic getVariable ["executionCodeUnit",{}];
+private _distance = _logic getVariable ["distance", 150];
+private _activation = _logic getVariable ["activation", 650];
+private _civiliansType = _logic getVariable ["civiliansType", "altis"];
+private _civiliansCount = _logic getVariable ["civiliansCount", 15];
+private _unitTypes = _logic getVariable ["unitTypes", []];
+private _buildings = _logic getVariable ["buildings", []];
+private _executionCodeUnit = _logic getVariable ["executionCodeUnit", {}];
+
+private _spawnedUnits = _logic getVariable ["spawnedUnits", 0];
+private _unitsPerInterval = _logic getVariable ["unitsPerInterval", 1];
+private _interval = _logic getVariable ["interval", 0.25];
+
+private _spawnedNowCount = (_civiliansCount - _unitsPerInterval) min _unitsPerInterval;
 
 // move this to cfg soon*
 private _baseCivilians = [];
@@ -40,32 +44,33 @@ switch (_civiliansType) do {
 	_unitTypes pushBack _x;
 }forEach _baseCivilians;
 
-if (_unitsType isEqualTo []) exitWith {
+if (_unitTypes isEqualTo []) exitWith {
 	["civilians at '%1' was empty, exit script", nearestLocation [_logic, ""]] call BIS_fnc_logFormat;
 };
-[_buildings] call CBA_fnc_shuffle;
-private _spawned = 0;
-private _allAgents = [];
-{
-	if (_spawned >= _civiliansCount)exitWith{};
+//[_buildings, true] call CBA_fnc_shuffle;
+private _allAgents = _logic getVariable ["allAgents", []];
+for "_i" from 1 to _spawnedNowCount do {
+	private _building = selectRandom _buildings;
+	_allpositions = _building buildingPos -1;
 
-	_allpositions = _x buildingPos -1;
-	if ((count _allpositions) > 0)then
+	_spawnedUnits = _spawnedUnits + 1;
+	// added BEFORE condition, so if building was somehow corrupted it won't be stuck in infinite loop.
+
+	if !(_allpositions isEqualTo []) then
 	{
 		private _posSpawn = selectRandom _allpositions;
 		private _randomAgentArray = selectRandom _unitTypes;
-		_randomAgentArray params ["_agentType",["_loadout",[]]];
+		_randomAgentArray params ["_agentType", ["_loadout", []]];
 		private _agent = createAgent [_agentType, _posSpawn, [], 0, "CAN_COLLIDE"];
-		if !(_loadout isEqualTo [])then{
+		if !(_loadout isEqualTo [])then {
 			_agent setUnitLoadout _loadout;
 		};
 
 		_agent disableAI "FSM";
 		_agent setBehaviour "CARELESS";
 		_agent forceWalk true;
-		_allAgents pushBackUnique _agent;
-		_spawned = _spawned + 1;
-		_agent setVariable ["logic",_logic];
+		_allAgents pushBack _agent;
+		_agent setVariable ["logic", _logic];
 
 		// eventhandler for civilians to panic
 		private _ehFiredNear = _agent addEventHandler ["FiredNear",
@@ -80,26 +85,39 @@ private _allAgents = [];
 				default{_agent playMoveNow "ApanPknlMstpSnonWnonDnon_G01"};
 			};
 			_agent forceSpeed (_agent getSpeed "FAST");
-			_agent setVariable ["AI_panicTime",time];
-			[_agent] call MadinAI_fnc_civiliansAiMove;
+			_agent setVariable ["AI_panicTime", time];
+			[_agent] call MAI_fnc_civiliansAiMove;
 
-			private _ehFiredNear = _agent getVariable ["ehFiredNear",0];
+			private _ehFiredNear = _agent getVariable ["ehFiredNear", 0];
 			_agent removeEventHandler ["FiredNear", _ehFiredNear];
 		}];
-		[_agent] call MadinAI_fnc_civiliansAiMove;
+		[_agent] call MAI_fnc_civiliansAiMove;
 		_agent setVariable ["ehFiredNear", _ehFiredNear];
 
 		[_agent] call _executionCodeUnit;
-	};
-}forEach _buildings;
 
-private _addToZeus = _logic getVariable ["addToZeus",false];
-if (_addToZeus)then{
-	{
-		[_x, [_allAgents, true]] remoteExecCall ["addCuratorEditableObjects",2,false];
-	}forEach allCurators;
+		private _addToZeus = _logic getVariable ["addToZeus", false];
+		if (_addToZeus) then {
+			{
+				[_x, [[_agent], true]] remoteExecCall ["addCuratorEditableObjects", 2, false];
+			}forEach allCurators;
+		};
+	};
 };
 
-_logic setVariable ["allAgents",_allAgents];
+_logic setVariable ["allAgents", _allAgents];
+_logic setVariable ["spawnedUnits", _spawnedUnits];
 
-[_logic] call MadinAI_fnc_civiliansLoop;
+if (_spawnedUnits >= _civiliansCount) then {
+	[_logic] call MAI_fnc_civiliansLoop;
+}else {
+	[
+		{
+			_this call MAI_fnc_civiliansSpawn;
+		},
+		_this,
+		_interval
+	] call CBA_fnc_waitAndExecute;
+};
+
+Nil

@@ -1,6 +1,6 @@
 #include "../../script_components.hpp"
 /*
-	MadinAI_fnc_AiOnReloaded
+	MAI_fnc_AiOnReloaded
 
 	Description:
 		Handle AI reload.

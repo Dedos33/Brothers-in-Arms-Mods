@@ -1,132 +1,316 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="MadinAi">
-    <Key ID="STR_MadinAI_activation">
+<Project name="MAI">
+    <Key ID="STR_MAI_useRadio">
+        <Original>AI radio</Original>
+        <Polish>AI radio</Polish>
+    </Key>
+    <Key ID="STR_MAI_useRadioShort">
+        <Original>AI will use radio to inform nearby friendly units about nearby dangers.</Original>
+        <Polish>AI będzie używać radia by informować jednostki wokół o zagrożeniach.</Polish>
+    </Key>
+    <Key ID="STR_MAI_radioDistance">
+        <Original>Radio distance</Original>
+        <Polish>Odległość radia</Polish>
+    </Key>
+    <Key ID="STR_MAI_radioDistanceShort">
+        <Original>The distance to which the AI radio will work.</Original>
+        <Polish>Odległość do której będzie działało radio AI.</Polish>
+    </Key>
+    <Key ID="STR_MAI_activation">
         <Original>Activation distance</Original>
         <Polish>Odległość aktywacji</Polish>
     </Key>
-    <Key ID="STR_MadinAI_activationShort">
+    <Key ID="STR_MAI_activationShort">
         <Original>Distance from module area that will activate it. If the module has its own area of operation, the distance will be added up.</Original>
         <Polish>Odległość od obszaru modułu która spowoduje aktywację. Jeśli moduł posiada własny teren działania, odległość zostanie zsumowana.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_tickets">
+    <Key ID="STR_MAI_deactivation">
+        <Original>Deactivation distance</Original>
+        <Polish>Odległość dezaktywacji</Polish>
+    </Key>
+    <Key ID="STR_MAI_deactivationShort">
+        <Original>Distance from module area + activation distance, that will deactivate it. -1 to disable despawn.</Original>
+        <Polish>Odległość od obszaru modułu + odległość aktywacji, która spowoduje aktywację. -1 by wyłączyć despawn.</Polish>
+    </Key>
+    <Key ID="STR_MAI_tickets">
         <Original>Tickets</Original>
         <Polish>Tickety</Polish>
     </Key>
-    <Key ID="STR_MadinAI_ticketsShort">
+    <Key ID="STR_MAI_ticketsShort">
         <Original>Number of spawns bots. In special cases, it may be slightly larger.</Original>
         <Polish>Ilość spawnowanych botów. W szczególnych przypadkach może być minimalnie większa.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_minDist">
+    <Key ID="STR_MAI_minDist">
         <Original>Minimal distance</Original>
         <Polish>Minimalna odległość</Polish>
     </Key>
-    <Key ID="STR_MadinAI_minDistShort">
+    <Key ID="STR_MAI_minDistShort">
         <Original>Minimal distance of players from buildings. The building will be removed from the pool and the bots will spawn.</Original>
         <Polish>Minimalna odległość graczy od budynków. Budynek zostanie usunięty z puli, a boty zespawnowane.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_patrolCount">
+    <Key ID="STR_MAI_groupCount">
+        <Original>Patrol groups</Original>
+        <Polish>Grupy patrolujące</Polish>`
+    </Key>
+    <Key ID="STR_MAI_groupCountShort">
+        <Original>Number of patroling groups.</Original>
+        <Polish>Ilość grup patrolujących.</Polish>
+    </Key>
+    <Key ID="STR_MAI_patrolCount">
         <Original>Patrol units</Original>
         <Polish>Jednostki patrolujące</Polish>
     </Key>
-    <Key ID="STR_MadinAI_patrolCountShort">
-        <Original>Minimum number of patrol / spawned units</Original>
-        <Polish>Minimalna ilość jednostek patrolujących / spawnowanych na bieżąco.</Polish>
+    <Key ID="STR_MAI_patrolCountShort">
+        <Original>Number of units in patrol.</Original>
+        <Polish>Ilość jednostek w grupie patrolujących.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_limitBuilding">
+    <Key ID="STR_MAI_minimalCount">
+        <Original>Minimal units</Original>
+        <Polish>Minimum jednostek</Polish>
+    </Key>
+    <Key ID="STR_MAI_minimalCountShort">
+        <Original>Minimum number of units in a patrolling group, after which new units will be spawned.</Original>
+        <Polish>Minimalna ilość jednostek w grupie patrolujących, po osiągnięciu której zostaną dospawnowane nowe jednostki.</Polish>
+    </Key>
+    <Key ID="STR_MAI_maxWait">
+        <Original>Minimal units timeout</Original>
+        <Polish>Timeout minimum jednostek</Polish>
+    </Key>
+    <Key ID="STR_MAI_maxWaitShort">
+        <Original>Maximum time after which new units will be spanwed, despite that the minimum number of units has not been reached.</Original>
+        <Polish>Maksymalny czas, po którym zaczną być dospawnowywane kolejne jednostki, mimo braku osiągnięcia minimalnej ilości jednostek.</Polish>
+    </Key>
+    <Key ID="STR_MAI_limitBuilding">
         <Original>Limit per building</Original>
         <Polish>Limit na budynek</Polish>
     </Key>
-    <Key ID="STR_MadinAI_limitBuildingShort">
+    <Key ID="STR_MAI_limitBuildingShort">
         <Original>How many times bots can go from one building.</Original>
         <Polish>Ile razy maksymalnie mogą wyjść boty z jednego budynku.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_ticketsPoint">
+    <Key ID="STR_MAI_spawnChance">
+        <Original>Spawn chance</Original>
+        <Polish>Szansa na spawn</Polish>
+    </Key>
+    <Key ID="STR_MAI_spawnChanceShort">
+        <Original>Percentage chance to spawn bots in building next to players.</Original>
+        <Polish>Procentowa szansa na zespawnowanie botów w budynku obok graczy.</Polish>
+    </Key>
+    <Key ID="STR_MAI_stationaryTime">
+        <Original>Stationary time</Original>
+        <Polish>Czas stacjonarny</Polish>
+    </Key>
+    <Key ID="STR_MAI_stationaryTimeShort">
+        <Original>How long bots spawned in the buildings next to the players will be stationary. During this time, bots will be able to be despaved if players move away from the building during this time. This setting does not apply to bots in patrol groups.</Original>
+        <Polish>Jak długo boty zespawnowane w budynkach obok graczy bedą stacjonarne. Przez ten czas boty będą mogły zostać despawnowanem jeśli w tym czasie gracze odejdą od danego budynku. To ustawienie nie dotyczy botów zespawnowanych dla patroli.</Polish>
+    </Key>
+    <Key ID="STR_MAI_spawnPerBuilding">
+        <Original>Bots per building</Original>
+        <Polish>Boty na budynek</Polish>
+    </Key>
+    <Key ID="STR_MAI_spawnPerBuildingShort">
+        <Original>How many bots will be spawned per building. Minimal value will allways be 1.</Original>
+        <Polish>Ile botów będzie spawnowanych na raz na jeden budynek. Minimalna wartość zawsze będzie wynosić 1.</Polish>
+    </Key>
+    <Key ID="STR_MAI_spawnHalfLimit">
+        <Original>Limit stationary</Original>
+        <Polish>Limit stacjonarnych</Polish>
+    </Key>
+    <Key ID="STR_MAI_spawnHalfLimitShort">
+        <Original>Above how many bots number of new spawned units per building will be divided by half. Value will not be less than 1.</Original>
+        <Polish>powyżej ilu botów ilość spawnowanych jednostek na budynek będzie dzielona na pół. Wartość nie będzie mniejsza niż 1.</Polish>
+    </Key>
+    <Key ID="STR_MAI_defendOnly">
+        <Original>Defend zone</Original>
+        <Polish>Obrona strefy</Polish>
+    </Key>
+    <Key ID="STR_MAI_defendOnlyShort">
+        <Original>Bots will only defend the position, they will not automatically go out of the zone. Works only with automatic waypoints.</Original>
+        <Polish>Boty będą jedynie bronić pozycji, nie będą samoczynnie wychodzić poza strefę. Działa jedynie przy automatycznych waypointach.</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodePatrol">
+        <Original>Code patrol group</Original>
+        <Polish>Kod grupy patrolu</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodePatrolShort">
+        <Original>Code executed on every patrol group spawn, before units spawned. Passed parameters [*GROUP*]</Original>
+        <Polish>Kod wykonywany dla każdej grupy patrolu, przed spawnem jednostek. Przekazywane parametry [*GROUP*]</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeStationary">
+        <Original>Code stationary group</Original>
+        <Polish>Kod grupy stacjonarnej</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeStationaryShort">
+        <Original>Code executed on stationary group spawn, before units spawned. Passed parameters [*GROUP*]</Original>
+        <Polish>Kod wykonywany dla stacjonarnej grupy, przed spawnem jednostek. Przekazywane parametry [*GROUP*]</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeVehicleCrew">
+        <Original>Code vehicle group</Original>
+        <Polish>Kod grupy pojazdu</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeVehicleCrewShort">
+        <Original>Code executed on vehicle group spawn, before units spawned. Passed parameters [*GROUP*]</Original>
+        <Polish>Kod wykonywany dla grupy pojazdu, przed spawnem jednostek. Przekazywane parametry [*GROUP*]</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeVehicle">
+        <Original>Code vehicle</Original>
+        <Polish>Kod pojazdu</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeVehicleShort">
+        <Original>Code executed on vehicle spawn/ Passed parameters [*VEHICLE*]</Original>
+        <Polish>Kod wykonywany dla pojazdu. Przekazywane parametry [*VEHICLE*]</Polish>
+    </Key>
+    <Key ID="STR_MAI_deleteTrigger">
+        <Original>Delete trigger</Original>
+        <Polish>Usuń trigger</Polish>
+    </Key>
+    <Key ID="STR_MAI_deleteTriggerShort">
+        <Original>Delete synchronized trigger 5s after module activation.</Original>
+        <Polish>Usuń zsyncrhonizowany trigger po 5s od aktywacji modułu.</Polish>
+    </Key>
+    <Key ID="STR_MAI_ticketsPoint">
         <Original>Tickets</Original>
         <Polish>Tickety</Polish>
     </Key>
-    <Key ID="STR_MadinAI_ticketsPointShort">
+    <Key ID="STR_MAI_ticketsPointShort">
         <Original>Number of additional spawned bots.</Original>
         <Polish>Ilość dodatkowo spawnowanych botów.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_minDistPoint">
+    <Key ID="STR_MAI_minDistPoint">
         <Original>Minimal distance</Original>
         <Polish>Minimalna odległość</Polish>
     </Key>
-    <Key ID="STR_MadinAI_minDistPointShort">
+    <Key ID="STR_MAI_minDistPointShort">
         <Original>Minimal distance between the players and the spawner. When the player gets closer, the spawner will be removed and the bot will be spawned.</Original>
         <Polish>Minimalna odległość graczy od spawnera. Gdy gracz znajdzie się bliżej, spawner zostanie usunięty, a bot zespawnowany.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_activationPoint">
+    <Key ID="STR_MAI_activationPoint">
         <Original>Activation distance</Original>
         <Polish>Odległość aktywacji</Polish>
     </Key>
-    <Key ID="STR_MadinAI_activationPointShort">
+    <Key ID="STR_MAI_activationPointShort">
         <Original>The distance from which the bots will be spawned (in the same positions as in 3den). -1 to not remove the bots on start. Recommended values above ~1000 (depending on visibility / terrain).</Original>
         <Polish>Odległość, od której boty zostaną zespawnowane (na tych samych pozycjach co w 3den). -1 by nie usuwać botów na start. Zalecane wartości powyżej ~1000 (zależnie od widoczności / terenu).</Polish>
     </Key>
-    <Key ID="STR_MadinAI_addToZeus">
-        <Original>Add to zeus</Original>
-        <Polish>Dodaj do zeusa</Polish>
+    <Key ID="STR_MAI_despawn">
+        <Original>Despawn</Original>
+        <Polish>Despawn</Polish>
     </Key>
-    <Key ID="STR_MadinAI_addToZeusShort">
-        <Original>New unit will be added to the zeus.</Original>
-        <Polish>Nowa jednostka zostanie dodana do zeusa.</Polish>
+    <Key ID="STR_MAI_despawnShort">
+        <Original>Despawn units, if players are beyond activation distance + despawn distance. Activation distance must be greater than 0 for despawn to work.</Original>
+        <Polish>Despawnuj jednostki, jeśli gracze znajdą się dalej niż ustawiona odległość aktywachji + despawnu. Odległość aktywacji musi być większa niż 0, by despawn działał.</Polish>
     </Key>
-    <Key ID="STR_MadinAI_executionCodeUnit">
-        <Original>Code executed on unit spawn</Original>
-        <Polish>Kod wykonywany podczas spawu jednostki</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_executionCodeUnitShort">
-        <Original>Code executed after unit spawn. Passed parameters [_unit]</Original>
-        <Polish>Kod wykonywany po spawnowanie jednostki. Przekazywane parametry [_unit]</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_civiliansType">
-        <Original>Civilians type</Original>
-        <Polish>Rodzaj cywili</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_civiliansTypeShort">
-        <Original>Type of civilians used in the module. Synchronized units are also used, along with their loadout.</Original>
-        <Polish>Rodzaj cywili używany w module. Zsynchronizowane jednostki również są używane, razem z ich loadoutem.</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_includeAir">
-        <Original>Plane/heli activation</Original>
-        <Polish>Aktywacja przy pomocy helikoptera/samolotu</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_includeAirShort">
-        <Original>Module activation will take into account players in the aircrafts.</Original>
-        <Polish>Moduł do sprawdzania aktywacji będzie brał pod uwagę graczy znajdujących się w pojazdach powietrznych.</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_civiliansCount">
-        <Original>Number of civilians</Original>
-        <Polish>Ilość cywili</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_civiliansCountShort">
-        <Original>Number of spawned civilians. Spawn only in buildings, compatible with CBA_building.</Original>
-        <Polish>Ilość zepsawnowanych cywili. Cywile spawnowani jedynie w budynkach, kompatybilne z CBA_building.</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_buildingsDistance">
-        <Original>Buildings distance</Original>
-        <Polish>Odległość budynków</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_buildingsDistanceShort">
-        <Original>If any of the buildings in the given radius will be destroyed, the module will be turned off.</Original>
-        <Polish>Jeśli którykolwiek z budynków w podanym promieniu zostanie zniszczony, moduł zostanie wyłączony.</Polish>
-    </Key>
-    <Key ID="STR_MadinAI_deactivation">
+    <Key ID="STR_MAI_deActivationPoint">
         <Original>Deactivation distance</Original>
         <Polish>Odległość deaktywacji</Polish>
     </Key>
-    <Key ID="STR_MadinAI_deactivationShort">
-        <Original>Distance increased by the given value to the activation distance. If there are no more players in the area, the units will be removed.</Original>
-        <Polish>Odległość powiększona o podaną wartość do odległość aktywacji. Jeśli w danym rejonie nie znajdują już się gracze, jednostki zostaną usunięte.</Polish>
+    <Key ID="STR_MAI_deActivationPointShort">
+        <Original>Distance (+ activation distance) from which units will start to despawn if there are no players near the module.</Original>
+        <Polish>Odległość (+ odległość aktywacji) od której zacznie się despawn jednostek, jeśli w pobliżu modułu nie ma graczy.</Polish>
+    </Key>
+    <Key ID="STR_MAI_deActivationManPoint">
+        <Original>Despawn distance</Original>
+        <Polish>Odległość despawnu</Polish>
+    </Key>
+    <Key ID="STR_MAI_deActivationManPointShort">
+        <Original>Minimum distance of bots from players so that the bot can be removed. The condition must be met for each bot in the team of the group to be removed.</Original>
+        <Polish>Minimalna odległość botów od graczy, by bot mógł zostać usunięty. Warunek musi być spełniony dla każdego bota w drużynie, by grupa została usunięta.</Polish>
+    </Key>
+    <Key ID="STR_MAI_addToZeus">
+        <Original>Add to zeus</Original>
+        <Polish>Dodaj do zeusa</Polish>
+    </Key>
+    <Key ID="STR_MAI_addToZeusShort">
+        <Original>New unit will be added to the zeus.</Original>
+        <Polish>Nowa jednostka zostanie dodana do zeusa.</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeUnit">
+        <Original>Code executed on unit spawn</Original>
+        <Polish>Kod wykonywany podczas spawu jednostki</Polish>
+    </Key>
+    <Key ID="STR_MAI_executionCodeUnitShort">
+        <Original>Code executed after unit spawn. Passed parameters [*UNIT*]</Original>
+        <Polish>Kod wykonywany po spawnowanie jednostki. Przekazywane parametry [*UNIT*]</Polish>
+    </Key>
+    <Key ID="STR_MAI_civiliansType">
+        <Original>Civilians type</Original>
+        <Polish>Rodzaj cywili</Polish>
+    </Key>
+    <Key ID="STR_MAI_civiliansTypeShort">
+        <Original>Type of civilians used in the module. Synchronized units are also used, along with their loadout.</Original>
+        <Polish>Rodzaj cywili używany w module. Zsynchronizowane jednostki również są używane, razem z ich loadoutem.</Polish>
+    </Key>
+    <Key ID="STR_MAI_includeNotSupported">
+        <Original>Include Not Supported</Original>
+        <Polish>Uwzględnij nieobsługiwane</Polish>
+    </Key>
+    <Key ID="STR_MAI_includeNotSupportedShort">
+        <Original>module will also use buildings from outside the supported buildings. WARNING! Such positions can be in visible places, such as on the roof / balcony. Recommended not used.</Original>
+        <Polish>Moduł do bazy używanych budynków będzie również brał pod uwagę budynki z poza puli wspieranych budynków. UWAGA! Takie pozycje mogą być w widocznych miejscach, jak na dachu / balkonie. Zalecane nie używanie tej opcji.</Polish>
+    </Key>
+    <Key ID="STR_MAI_includeAir">
+        <Original>Plane/heli activation</Original>
+        <Polish>Aktywacja przy pomocy helikoptera/samolotu</Polish>
+    </Key>
+    <Key ID="STR_MAI_includeAirShort">
+        <Original>Module activation will take into account players in the aircrafts.</Original>
+        <Polish>Moduł do sprawdzania aktywacji będzie brał pod uwagę graczy znajdujących się w pojazdach powietrznych.</Polish>
+    </Key>
+    <Key ID="STR_MAI_forceActivate">
+        <Original>Force activation</Original>
+        <Polish>Wymuś aktywację</Polish>
+    </Key>
+    <Key ID="STR_MAI_forceActivateShort">
+        <Original>Force module activation if any condition is met (distance / code / trigger) instead of all. If despawn is used, the distance setting should be taken into account.</Original>
+        <Polish>Wymuś aktywację modułu, jeśli dowolny warunek zostanie spełniony (dystans / kod / trigger) zamiast wszystkich. Jeśli despawn jest używany, należy wziąć ustawienia dystansu pod uwagę.</Polish>
+    </Key>
+    <Key ID="STR_MAI_deleteVehicles">
+        <Original>Delete vehicles</Original>
+        <Polish>Usuń pojazdy</Polish>
+    </Key>
+    <Key ID="STR_MAI_deleteVehiclesShort">
+        <Original>Delete vehicles / static weapons of synchronized groups. Vehicles will reappear after activation in the same condition as before removal.</Original>
+        <Polish>Usuń pojazdy / broń statyczną zsynchronizowanych grup. Pojazdy pojawią się ponownie po aktywacji w takim samym stanie jak przed usunięciem.</Polish>
+    </Key>
+    <Key ID="STR_MAI_checkBuildings">
+        <Original>Check buildings</Original>
+        <Polish>Sprawdź budynki</Polish>
+    </Key>
+    <Key ID="STR_MAI_checkBuildingsShort">
+        <Original>If the building / object above (or under if above doesn't exist) will be in a different state (the building will turn into ruins), unit will not be spawned. Checked only for infantry and static weapons.</Original>
+        <Polish>Jeśli budynek / obiekt nad (lub pod jeśli nad nic nie będize) zmieni swój stan (budynek zamieni się w ruiny), nie spawnuj danej jednostki. Sprawdzane jedynie dla piechoty i broni statycznej.</Polish>
+    </Key>
+    <Key ID="STR_MAI_civiliansCount">
+        <Original>Number of civilians</Original>
+        <Polish>Ilość cywili</Polish>
+    </Key>
+    <Key ID="STR_MAI_civiliansCountShort">
+        <Original>Number of spawned civilians. Spawn only in buildings, compatible with CBA_building.</Original>
+        <Polish>Ilość zepsawnowanych cywili. Cywile spawnowani jedynie w budynkach, kompatybilne z CBA_building.</Polish>
+    </Key>
+    <Key ID="STR_MAI_buildingsDistance">
+        <Original>Buildings distance</Original>
+        <Polish>Odległość budynków</Polish>
+    </Key>
+    <Key ID="STR_MAI_buildingsDistanceShort">
+        <Original>If any of the buildings in the given radius will be destroyed, the module will be turned off.</Original>
+        <Polish>Jeśli którykolwiek z budynków w podanym promieniu zostanie zniszczony, moduł zostanie wyłączony.</Polish>
     </Key>
     <Key ID="STR_MAI_AiEnable">
-        <Original>Enable "Madin AI"</Original>
-        <Polish>Uruchom "Madinowe AI"</Polish>
+        <Original>Enable additional "AI"</Original>
+        <Polish>Uruchom dodatkowe "AI"</Polish>
     </Key>
     <Key ID="STR_MAI_AiEnableShort">
-        <Original>Additional AI</Original>
-        <Polish>Poprawki AI</Polish>
+        <Original>Adds new behavior for bots - PTSD under fire and changing subskills, waypoints, searching for unfilled static weapons / vehicles etc. Additional options below.</Original>
+        <Polish>Dodaje nowe zachowania dla botów - PTSD pod ostrzałem i zmiana subskilli, waypointy, szukanie nieobsadzonych broni statycznych / pojazdów itp. Dodatkowe opcje poniżej.</Polish>
+    </Key>
+    <Key ID="STR_MAI_editWaypoints">
+        <Original>Automatic waypoints</Original>
+        <Polish>Automatyczne waypointy</Polish>
+    </Key>
+    <Key ID="STR_MAI_editWaypointsShort">
+        <Original>"Automatic zeus". Adding / removing waypoints for bots (attack / defend). Adding a waypoint by player deactivates the waypoint editing for the group until all the waypoints have been used by the group.</Original>
+        <Polish>"Automatyczny zeus". Dodawanie / usuwanie waypointów dla botów (atak / obrona). Dodanie waypointu przez gracza dezaktywuje edycje waypointów dla grupy do czasu wykorzystania wszystkich waypointów przez grupę.</Polish>
     </Key>
     <Key ID="STR_MAI_moveDistance">
         <Original>Move distance</Original>
@@ -157,15 +341,23 @@
         <Polish>Współczynnik zaniku PTSD.</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDfactorShort">
-        <Original>Zanik PTSD</Original>
-        <Polish>Współczynnik zaniku PTSD.</Polish>
+        <Original>How fast the group PTSD will fade over time.</Original>
+        <Polish>Jak szybko PTSD grupy będzie zanikać z czasem.</Polish>
+    </Key>
+    <Key ID="STR_MAI_unitSuppressFactor">
+        <Original>Suppress to Skill</Original>
+        <Polish>Przygwożdżenie na umiejętności</Polish>
+    </Key>
+    <Key ID="STR_MAI_unitSuppressFactorShort">
+        <Original>How much suppress will have impact on AI subskills (+ group skill reduction by PTSD). When set to 1, all bot skills will drop during a full suppress to 0.</Original>
+        <Polish>Jak duży wpływ własnego przygwożdżenia jednostki będzie miał na jego subskille (+ grupowe obniżenie skilli przez PTSD). Przy ustawieniu na 1 wszytkie skille bota spadną podczas pełnego przygwożdżenia spadną do 0.</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDhit">
         <Original>PTSD on hit</Original>
         <Polish>PTSD na obrażenia</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDhitShort">
-        <Original>How much AI group will get PTSD for damage received (*multiplied by a PTSD factor)</Original>
+        <Original>How much AI group will get PTSD for damage received (*multiplied by a PTSD factor).</Original>
         <Polish>Ile grupa AI dostanie PTSD na otrzymane obrażenia (*pomnożone przez współczynnik PTSD).</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDkilled">
@@ -173,7 +365,7 @@
         <Polish>PTSD po śmierci</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDkilledShort">
-        <Original>PTSD killed</Original>
+        <Original>How much the group will get PTSD after dead of group member (* multiplied by the PTSD factor).</Original>
         <Polish>Ile grupa dostanie PTSD po zabiciu członka grupy (*pomnożone przez współczynnik PTSD).</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDsuppress">
@@ -213,7 +405,7 @@
         <Polish>PTSD odległość ucieczki</Polish>
     </Key>
     <Key ID="STR_MAI_PTSDfleeDistanceShort">
-        <Original>How far the bots will run</Original>
+        <Original>How far the bots will run.</Original>
         <Polish>Jak daleko boty będą uciekać.</Polish>
     </Key>
     <Key ID="STR_MAI_objSightDistance">
@@ -231,6 +423,14 @@
     <Key ID="STR_MAI_AiSightCoefFactorShort">
         <Original>By what value reduce the view distace skill for each object.</Original>
         <Polish>O ile zmniejszyć skill zasięgu widzenia na każdy obiekt.</Polish>
+    </Key>
+    <Key ID="STR_MAI_dynamicCamoCoef">
+        <Original>Additional camouflage</Original>
+        <Polish>Dodatkowy kamuflaż</Polish>
+    </Key>
+    <Key ID="STR_MAI_dynamicCamoCoefShort">
+        <Original>Activates additional camouflage for the player depending on the amount of vegetation around him.</Original>
+        <Polish>Aktywuje dodatkowy kamuflaż dla gracza w zależności od ilości roślinności wokół niego.</Polish>
     </Key>
     <Key ID="STR_MAI_camoObjDistance">
         <Original>Camouflage distance</Original>
@@ -261,8 +461,8 @@
         <Polish>Dodatkowe magazynki</Polish>
     </Key>
     <Key ID="STR_MAI_AiBonusMagsShort">
-        <Original>Bots will get a % chance of getting a new magazine after reloading. Recommended when using "Madin AI RHS / CBA compat" for more frequent AI firing (as a separate mod on WorkShop). -1 to switch off.</Original>
-        <Polish>Boty dostaną % szans na dostanie nowego magazynku do broni po przeładowaniu. Zalecane przy używaniu modułu częstszego ostrzału od botów "Madin AI RHS/CBA compat"(jako oddzielny mod na WorkShop). -1 by wyłączyć.</Polish>
+        <Original>Bots will get a % chance of getting a new magazine after reloading. Recommended when using "MAI RHS / CBA compat" for more frequent AI firing (as a separate mod on WorkShop). -1 to switch off.</Original>
+        <Polish>Boty dostaną % szans na dostanie nowego magazynku do broni po przeładowaniu. Zalecane przy używaniu modułu częstszego ostrzału od botów "MAI RHS/CBA compat"(jako oddzielny mod na WorkShop). -1 by wyłączyć.</Polish>
     </Key>
     <Key ID="STR_MAI_enableAimPenalty">
         <Original>Penalty for aiming</Original>
@@ -297,11 +497,91 @@
         <Polish>Kara do celności nie będzie większa od podanej. wartości powyżej 30-50 mogą dać "nietypowe" efekty. Kara celności = pozostały czas kary * siła kary. Kara jest o połowę mniejsza w pojazdach.</Polish>
     </Key>
     <Key ID="STR_MAI_AIgroupEnableAi">
-        <Original>Madin AI</Original>
-        <Polish>Madin AI</Polish>
+        <Original>MAI</Original>
+        <Polish>MAI</Polish>
     </Key>
 	    <Key ID="STR_MAI_AIgroupEnableAiTip">
-        <Original>Enable Madin AI for group.</Original>
-        <Polish>Uruchom Madin AI dla grupy.</Polish>
+        <Original>Enable MAI for group.</Original>
+        <Polish>Uruchom MAI dla grupy.</Polish>
+    </Key>
+    <Key ID="STR_MAI_reinforceDistance">
+        <Original>Get out distance</Original>
+        <Polish>Dystans wysiadania</Polish>
+    </Key>
+	    <Key ID="STR_MAI_reinforceDistanceShort">
+        <Original>Distance from the module at which infantry from the vehicle will leave the vehicle and go to the location of the module.</Original>
+        <Polish>Odległość od modułu od której piechota z pojazdu opuści pojazd i wyruszy do lokalizacji modułu.</Polish>
+    </Key>
+    <Key ID="STR_MAI_reinforceQuantity">
+        <Original>Number of vehicles</Original>
+        <Polish>Ilość pojazdów</Polish>
+    </Key>
+	    <Key ID="STR_MAI_reinforceQuantityShort">
+        <Original>How many times the same vehicle will come to the module. It applies to each synchronized vehicle separately.</Original>
+        <Polish>Ile razy ten sam pojazd przyjedzie do modułu. Tyczy się każdego szynchronizowanego pojazdu oddzielnie.</Polish>
+    </Key>
+    <Key ID="STR_MAI_reinforceMinimalCrew">
+        <Original>Minimal crew</Original>
+        <Polish>Minimalna ilość załogi</Polish>
+    </Key>
+	    <Key ID="STR_MAI_reinforceMinimalCrewShort">
+        <Original>From this number of people living from the vehicle another vehicle will arrive. Checked separately for each vehicle.</Original>
+        <Polish>Od tej liczby żyjących ludzi z pojazdu przyjedzie kolejny pojazd. Sprawdzane oddzielnie dla każdego pojazdu.</Polish>
+    </Key>
+    <Key ID="STR_MAI_reinforceDespawn">
+        <Original>Despawn</Original>
+        <Polish>Despawn</Polish>
+    </Key>
+	    <Key ID="STR_MAI_reinforceDespawnShort">
+        <Original>After ejecting the infantry, the vehicle will return to the spawn and be removed. If unchecked, the vehicle and crew will remain in place of the module.</Original>
+        <Polish>Pojazd po wyrzuceniu piechoty powróci na miejsce spawnu oraz zostanie usunięty. Jeśli nie zaznaczone, pojazd razem z załogą pozostanie na miejscu modułu.</Polish>
+    </Key>
+    <Key ID="STR_MAI_activateCondition">
+        <Original>Activate condition</Original>
+        <Polish>Warunek aktywacji</Polish>
+    </Key>
+	    <Key ID="STR_MAI_activateConditionShort">
+        <Original>A condition that must return true to activate module. All synchronized triggers must also return true. Checked every ~1s.</Original>
+        <Polish>Warunek który musi zwrócić true, by moduł został zespawnowany. Wszystkie zsynchronizowane triggery również muszą zwrócić warunek true. Sprawdzany co ~1s.</Polish>
+    </Key>
+    <Key ID="STR_MAI_customSpawn">
+        <Original>Patrol custom spawn</Original>
+        <Polish>Własny spawn patrolu</Polish>
+    </Key>
+    <Key ID="STR_MAI_customSpawnShort">
+        <Original>The first patrol will spawn on the positions of synchronized units, not in buildings. Such units will always be spawned, regardless of the state of the buildings nearby.</Original>
+        <Polish>Pierwszy patrol zespawnuje się na pozycjach zsynchronizowanych jednostek, a nie w budynkach. Takie jednostki będą spawnowane zawsze, niezależnie od stanu buydnków obok.</Polish>
+    </Key>
+    <Key ID="STR_MAI_unitsPerInterval">
+        <Original>Spawn units at once</Original>
+        <Polish>Spawn jednostek na raz</Polish>
+    </Key>
+    <Key ID="STR_MAI_unitsPerIntervalShort">
+        <Original>How many units will be spawned per interval.</Original>
+        <Polish>Ile jednostek zostanie zespawnowanych na interwał.</Polish>
+	</Key>
+    <Key ID="STR_MAI_interval">
+        <Original>Spawn interval</Original>
+        <Polish>Interwał spawnu</Polish>
+    </Key>
+    <Key ID="STR_MAI_intervalShort">
+        <Original>Every how many seconds new units will be spawned. 0 for spawning on every frame.</Original>
+        <Polish>Co ile sekund będą spawnowane kolejne jednostki. 0 dla spawnowania co każdą klatkę.</Polish>
+    </Key>
+    <Key ID="STR_MAI_intervalVeh">
+        <Original>Module spawn interval</Original>
+        <Polish>Interwał spawnu modułu</Polish>
+    </Key>
+    <Key ID="STR_MAI_intervalVehShort">
+        <Original>Every how many seconds new units will be spawned. 0 for spawning on every frame.</Original>
+        <Polish>Ile sekund minimum musi minąć od poprzedniego zespawnowanego pojazdu z innego modułu wsparcia, by ten mógł zostać aktywowany. -1 by wyłączyć sprawdzanie.</Polish>
+    </Key>
+    <Key ID="STR_MAI_maxUnitsOnMap">
+        <Original>Max number of units on map</Original>
+        <Polish>Max. ilość jednostek na mapie</Polish>
+    </Key>
+    <Key ID="STR_MAI_maxUnitsOnMapShort">
+        <Original>Below how many active bots must be on the map before module can be activated. Facilitates the provision of "playable" FPS on the map.</Original>
+        <Polish>Poniżej ilu aktywnych botów musi być na mapie, zanim moduł zostanie aktywowany. Ułatwia zapewnienie "grywalnych" FPS na mapie.</Polish>
     </Key>
 </Project>

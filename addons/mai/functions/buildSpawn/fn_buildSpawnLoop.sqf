@@ -1,5 +1,5 @@
  /*
-	MadinAI_fnc_buildSpawnLoop
+	MAI_fnc_buildSpawnLoop
 
 	Description:
 		Initiate buildSpawn main loop
@@ -12,161 +12,190 @@
 
 */
 
-//systemChat "MadinAI_fnc_buildSpawnLoop";
-
 params [["_logic",objNull]];
-if (_logic isEqualTo objNull)exitWith {
-	diag_log text "[MadinAI_fnc_buildSpawnLoop] logic is objNull, exit sctipt"
-};
-private _activation = _logic getVariable ["activation",10000];
 
-// find if there are players nearby. If not, wait until they are.
-private _nearUnits = _logic nearEntities ["AllVehicles", _activation];
-if ((_nearUnits findIf {isPlayer _x && {alive _x}}) isEqualTo -1) exitWith{
-	[{
-		[_this] call MadinAI_fnc_buildSpawnLoop;
-		},
-		_logic,
-		random [0.9,1,1.1]
-	] call CBA_fnc_waitAndExecute;
+if (_logic isEqualTo objNull) exitWith {
+	diag_log text "[MAI_fnc_buildSpawnLoop] logic is objNull, exit sctipt";
+};
+
+private _tickets = _logic getVariable ["tickets",0];
+if (_tickets <= 0) exitWith {
+	diag_log text "[MAI_fnc_buildSpawnLoop] tickets reached 0, exit script.";
+	_logic setVariable ["active", false, true];
 };
 
 private _spawnbuildings = _logic getVariable ["spawnbuildings",[]];
+
+if (_spawnbuildings isEqualTo []) exitWith {
+	diag_log text "[MAI_fnc_buildSpawnLoop] tickets reached 0, exit script.";
+	_logic setVariable ["active", false, true];
+};
+
+private _activation = _logic getVariable ["activation",1000];
+private _deactivation = _logic getVariable ["deactivation",-1];
+private _stationaryGroup = _logic getVariable ["stationaryGroup",grpNull];
+private _patrolGroups = _logic getVariable ["patrolGroups",[]];
+private _customSpawn = _logic getVariable ["customSpawn",false];
+//private _maxDist = _logic getVariable ["maxDist", _activation];
 private _minDist = _logic getVariable ["minDist",35];
 private _unitTypes = _logic getVariable ["unitTypes",[]];
-private _tickets = _logic getVariable ["tickets",0];
-private _patrolCount = _logic getVariable ["patrolCount",0];
-private _stationaryGroup = _logic getVariable ["stationaryGroup",grpNull];
-private _patrolGroup = _logic getVariable ["patrolGroup",grpNull];
+private _spawnChance = _logic getVariable ["spawnChance",100];
+private _stationaryTime = _logic getVariable ["stationaryTime",[45,90,150]];
+private _spawnPerBuilding = _logic getVariable ["spawnPerBuilding",[1,1.5,3]];
+private _spawnHalfLimit = _logic getVariable ["spawnHalfLimit",8];
 private _executionCodeUnit = _logic getVariable ["executionCodeUnit",{}];
 
-//systemChat str _tickets;
+// check if there are any players in work area. If not, suspend loop for 1s
+private _nearUnitsMax = _logic nearEntities ["AllVehicles", _activation];
+if ((_nearUnitsMax findIf {isPlayer _x && {alive _x}}) isEqualTo -1) exitWith {
+	// used for despawn
+	_logic setVariable ["suspended", true];
+	[
+		{
+			_this call MAI_fnc_buildSpawnLoop;
+		},
+		_this,
+		1
+	] call CBA_fnc_waitAndExecute;
 
-// find if there are players closer than minimal distance to each building.
-// if there is a player, spawn unit and delete building from script.
-{
-	_x params ["_building", "_buildingPositons", "_limit"];
-	if (damage _building < 0.2) then{
-		_nearplayers = _building nearEntities ["allVehicles", _minDist];
-		_player = _nearplayers findIf {isPlayer _x};
-		if (_player != -1)then{
-			private _randpos = selectRandom _buildingPositons;
-			_randpos params ["_pos","_dir"];
-			//systemChat format ["test %1 / %2",_pos,_dir];
-			private _list = _pos nearEntities ["Man", 0.3];
-			if (_list isEqualTo []) then{
-				// spawn AI, get first type/loadout from list and move it to end of array.
-				private _unitArr = _unitTypes deleteAt 0;
-				_unitArr params ["_unitType","_unitLoadout"];
-				private _standTime = random [45,60,75]; 
-				private _newUnit = [_stationaryGroup,_unitType,_pos,_dir,_standTime] call MadinAI_fnc_spawnAI;
-				_newUnit setUnitLoadout _unitLoadout;
-				_unitTypes pushBack _unitArr;
-				_tickets = _tickets - 1;
-				_newUnit disableAI "FSM";
-				_newUnit disableAI "PATH";
+	if (_deactivation < 0) exitWith {};
+	private _nearUnitsDespawn = _logic nearEntities ["AllVehicles", _activation + _deactivation];
+	if ((_nearUnitsDespawn findIf {isPlayer _x && {alive _x}}) isEqualTo -1) then {
+		{
+			[_x, _logic] call MAI_fnc_buildSpawnGroupDespawn;
+		}forEach _patrolGroups;
+		[_stationaryGroup, _logic] call MAI_fnc_buildSpawnGroupDespawn;
+	};
+};
+
+// check this condition only every ~ 0.5s
+private _lastPatrolCheck = _logic getVariable ["lastPatrolCheck", -1];
+if (_lastPatrolCheck + 0.5 < time) then {
+	[_logic] call MAI_fnc_buildSpawnLoopSpawnPatrol;
+	_logic setVariable ["lastPatrolCheck", time];
+	private _suspended = _logic getVariable ["suspended", false];
+	if (_suspended) then {
+		_logic setVariable ["suspended", false];
+		if (_customSpawn) then {
+			[_logic] call MAI_fnc_buildSpawnPatrolCustomPos;
+		};
+	};
+};
+
+private _buildingsPerFrame = count _spawnbuildings / diag_fpsMin;
+// set max to 50 buildings per frame. it should usually stay around 1-5 buildings per frame
+private _maxBuildings = ceil _buildingsPerFrame min count _spawnbuildings min 50;
+
+for "_i" from 1 to _maxBuildings do {
+	// find if there are players closer than minimal distance to each building
+	// if there is a player, spawn unit and delete building from script
+	private _buildingArray = _spawnbuildings deleteAt 0;
+	_buildingArray params ["_building", "_buildingPositons", "_limitBuilding", ["_forceSpawn", false]];
+	// delete damaged buildings
+	if (damage _building < 0.2) then {
+		// find if there are players closer to building than minimal threshold
+		private _nearplayers = _building nearEntities ["allVehicles", _minDist];
+		private _player = _nearplayers findIf {isPlayer _x};
+		if (_player != -1) then {
+			// check spawn chance for bots, defined in module settings
+			if (!_forceSpawn && random 100 > _spawnChance) exitWith {};
+			// maximum number of bots that can be spawned
+			private _maxPositions = (round random _spawnPerBuilding) max 1 min _tickets;
+			// shuffle positions to use on spawn
+			private _buildingPositonsToSpawn = [];
+			private _buildingPositonsWork = +_buildingPositons;
+			if (count _buildingPositons > _maxPositions) then {
+				for "_i" from 1 to _maxPositions do {
+					private _randomPos = _buildingPositonsWork deleteAt (floor Random (count _buildingPositonsWork));
+					_buildingPositonsToSpawn pushBack _randomPos;
+				};
+			} else {
+				_buildingPositonsToSpawn = +_buildingPositons;
+			};
+			// half spawn positions when alive units above set threshold
+			if ({alive _x} count units _stationaryGroup > _spawnHalfLimit) then {
+				_maxPositions = (_maxPositions / 2) max 1;
+			};
+			// track spawned units
+			_units = [];
+			// how long units will be forced to stand still
+			// prevents units go prone in buildings after spawn
+			private _standTime = random _stationaryTime;
+			{
+				private _buildingPosition = _x;
+				_buildingPosition params ["_pos","_dir"];
+				// prevent spawning multiple units in same place
+				private _list = _pos nearEntities ["Man", 1];
+				if (_list isEqualTo []) then {
+					// spawn AI, get first type/loadout from list and move it to end of array.
+					if (_stationaryGroup isEqualTo grpNull) then {
+						private _side = _logic getVariable ["side", EAST];
+						private _stationaryGroup = createGroup [_side, true];
+						_logic setVariable ["stationaryGroup", _stationaryGroup];
+					};
+					private _newUnit = [_logic, _stationaryGroup, _unitTypes, _pos, _dir, _standTime + 5] call MAI_fnc_buildSpawnAiSpawn;
+					_tickets = _tickets - 1;
+					// make unit stationary until timeout set in module settings
+					_newUnit disableAI "FSM";
+					_newUnit disableAI "PATH";
+					[
+						{
+							params [["_newUnit",objNull]];
+							if (!alive _newUnit) exitWith {};
+							// variable used to despawn
+							_newUnit setVariable ["MAI_isMoving", true];
+							_newUnit enableAI "PATH";
+							_newUnit enableAI "FSM";
+						},
+						[_newUnit],
+						_standTime
+					] call CBA_fnc_waitAndExecute;
+					// call custom code set by user
+					[_newUnit] call _executionCodeUnit;
+					// track spawned units for despawn function
+					_units pushBack _newUnit;
+				};
+			} forEach _buildingPositonsToSpawn;
+			// despawn function
+			if !(_units isEqualTo []) then {
 				[
 					{
-						params ["_newUnit"];
-						_newUnit enableAI "PATH";
-						_newUnit enableAI "FSM";
+						_this call MAI_fnc_buildSpawnUnitDespawn
 					},
-					[_newUnit],
-					_standTime - 30
+					[_units, _logic, _building, _buildingPositons, _limitBuilding],
+					5
 				] call CBA_fnc_waitAndExecute;
-				[_newUnit] call _executionCodeUnit;
 			};
-			// delete building from list, as it was "checked" by player.
-			_spawnbuildings deleteAt _forEachIndex;
-		};
-	}else{
-		// remove dammged/destroyed buildings from script.
-		_spawnbuildings deleteAt _forEachIndex;
-	};
-}forEach _spawnbuildings;
-
-if (_tickets < 0 || _spawnbuildings isEqualTo []) exitWith {
-	diag_log text "[MadinAI_fnc_buildSpawnLoop] tickets reached 0, exit script.";
-};
-// spawn new units to patrol, if total count lower than defined
-if ((({alive _x} count units _patrolGroup) + ({alive _x} count units _stationaryGroup)) < _patrolCount) then{
-	private _randomBuild = floor random (count _spawnbuildings);
-	private _build = _spawnbuildings select _randomBuild;
-	_build params ["_building", "_buildingPositons", "_limit"];
-	{
-		_x params ["_pos","_dir"];
-		private _list =_pos nearEntities ["Man", 0.3];
-		if (_list isEqualTo []) then
-		{
-			// spawn AI, get first type/loadout from list and move it to end of array.
-			private _unitArr = _unitTypes deleteAt 0;
-			_unitArr params ["_unitType","_unitLoadout"];
-			private _newUnit = [_patrolGroup,_unitType,_pos,_dir,30] call MadinAI_fnc_spawnAI;
-			_newUnit disableAI "FSM";
-
-			[
-				{
-					params ["_newUnit"];
-					_newUnit enableAI "FSM";
-				},
-				[_newUnit],
-				20
-			] call CBA_fnc_waitAndExecute;
-
-			_newUnit setUnitLoadout _unitLoadout;
-			_unitTypes pushBack _unitArr;
-			_tickets = _tickets - 1;
-			[_newUnit] call _executionCodeUnit;
-		};
-	}forEach _buildingPositons;
-	_limit = _limit - 1;
-	if (_limit <= 0) then {
-		_spawnbuildings deleteAt _randomBuild;
-	}else{
-		_build set [3,_limit];
-	};
-
-	/*
-	// AI are "sometimes" blind/deaf fuking retards, need some help to not stay in place forever.
-	if ((count (waypoints _patrolGroup)) < 2) then{
-		_nearPlayers = [];
-		{
-			if (isPlayer _x && {alive _x && {_x isKindOf "Man"}}) then
-			{
-				_nearPlayers pushBack _x;
-			};
-		}forEach _nearUnits;
-		if !(_nearPlayers isEqualTo []) then {
-			private _victim = selectRandom _nearPlayers;
-			[
-				{
-					params ["_patrolGroup","_victimPos"];
-					private _waypoint = _patrolGroup addWaypoint [_victimPos, 5];
-					_waypoint setWaypointCompletionRadius random [15,30,45];
-
-				},
-				[_patrolGroup, getposATL _victim],
-				0.5
-			] call CBA_fnc_waitAndExecute;
+		} else {
+			// put building back to array if not used
+			_spawnbuildings pushBack _buildingArray;
 		};
 	};
-	*/
 };
 
-if (_tickets <= 0) exitWith {
-	diag_log text "[MadinAI_fnc_buildSpawnLoop] tickets reached 0, exit script.";
-};
 if (_spawnbuildings isEqualTo []) exitWith {
-	diag_log format ["[MadinAI_fnc_buildSpawnLoop] all possible buildings used with %1 tickets left, exit script.",_tickets];
+	diag_log text "[MAI_fnc_buildSpawnLoop] tickets reached 0, exit script.";
+	_logic setVariable ["active", false, true];
 };
 
-_logic setVariable ["spawnbuildings",_spawnbuildings];
-_logic setVariable ["tickets",_tickets];
-_logic setVariable ["unitTypes",_unitTypes];
+if (_buildingsPerFrame > 0.6) then {
+	// buildings per frame
+	[
+		{
+			_this call MAI_fnc_buildSpawnLoop;
+		},
+		_this,
+		0
+	] call CBA_fnc_waitAndExecute;
+} else {
+	// frames per building
+	[
+		{
+			_this call MAI_fnc_buildSpawnLoop;
+		},
+		_this,
+		1 / count _spawnbuildings
+	] call CBA_fnc_waitAndExecute;
+};
 
-[{
-	[_this] call MadinAI_fnc_buildSpawnLoop;
-	},
-	_logic,
-	random [0.9,1,1.1]
-] call CBA_fnc_waitAndExecute;
+nil

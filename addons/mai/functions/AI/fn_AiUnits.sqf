@@ -1,11 +1,12 @@
  /*
-	MadinAI_fnc_AiUnits
+	MAI_fnc_AiUnits
 
 	Description:
-		 Unit AI loop, can be switch on/off mid game in CBA settings
+		 Unit AI loop, can be switch on/off mid game in CBA settings.
+		 Calculate PTSD, Skill change etc.
 
 	Arguments:
-		0: Group <GROUP>
+		0: Units	<ARRAY>
 
 	Return Value:
 		None
@@ -16,11 +17,11 @@ params [["_units",[]]];
 private _unit = objNull;
 while {!(_units isEqualTo [])}do {
 	private _newUnit = _units deleteAt 0;
-	if (alive _newUnit)exitWith {
+	if (alive _newUnit) exitWith {
 		_unit = _newUnit;
 	};
 };
-if (_unit isEqualTo objNull)exitWith {};
+if (_unit isEqualTo objNull) exitWith {Nil};
 
 private _group = group _unit;
 
@@ -30,7 +31,7 @@ private _currentSuppress = getSuppression _unit;
 
 if (_currentSuppress > 0) then {
 	private _maxSupress = _group getVariable ["MAI_maxSupress",0];
-	if (_currentSuppress > _maxSupress)then {
+	if (_currentSuppress > _maxSupress) then {
 		_group setVariable ["MAI_maxSupress",_currentSuppress];
 	};
 	private _lastsuppress = _unit getVariable ["MAI_lastsuppress",0];
@@ -59,12 +60,12 @@ if (_currentSuppress > 0) then {
 // set unit skill based on it's PTSD and suppress
 {
 	private _baseSkill = _unit getVariable [_x,-1];
-	if (_baseSkill isEqualTo -1) then{
+	if (_baseSkill isEqualTo -1) then {
 		_baseSkill = _unit skill _x;
 		_unit setVariable [_x,_baseSkill];
 	};
 	///systemChat format ["%1 * %2 * (1 - %3)",_baseSkill,_PTSDfactor,_currentSuppress];
-	_unit setSkill [_x, _baseSkill * _PTSDfactor * (1 - (_currentSuppress * 0.75))];
+	_unit setSkill [_x, _baseSkill * _PTSDfactor * (1 - (_currentSuppress * MAI_unitSuppressFactor))];
 }forEach [
 	"aimingAccuracy",
 	"aimingShake",
@@ -78,7 +79,7 @@ if (_currentSuppress > 0) then {
 private _sightBlock = _unit getVariable ["MAI_sightBlock",0];
 {
 	private _baseSkill = _unit getVariable [_x,-1];
-	if (_baseSkill isEqualTo -1) then{
+	if (_baseSkill isEqualTo -1) then {
 		_baseSkill = _unit skill _x;
 		_unit setVariable [_x,_baseSkill];
 	};
@@ -90,7 +91,9 @@ private _sightBlock = _unit getVariable ["MAI_sightBlock",0];
 ];
 [
 	{
-		[_this] call MadinAI_fnc_AiUnits
+		[_this] call MAI_fnc_AiUnits
 	},
 	_units
 ]call CBA_fnc_execNextFrame;
+
+Nil

@@ -1,5 +1,5 @@
  /*
-	MadinAI_fnc_civiliansAiMove
+	MAI_fnc_civiliansAiMove
 
 	Description:
 		"AI" for civilians to move / hide under fire.
@@ -13,7 +13,7 @@
 */
 
 params [["_agent",objNull,[objNull]]];
-if (!alive _agent)exitWith{};
+if (!alive _agent) exitWith {Nil};
 
 private _logic = _agent getVariable ["logic",objNull];
 private _buildings = _logic getVariable ["buildings",[]];
@@ -21,7 +21,7 @@ if (_building isEqualTo [])exitWith {};
 
 private _building = (selectRandom _buildings);
 _allpositions = _building buildingPos -1;
-if ((count _allpositions) > 0)then
+if ((count _allpositions) > 0) then
 {
 	_pos = selectRandom _allpositions;
 	_agent moveTo _pos;
@@ -37,7 +37,9 @@ if (_panicTime >= 0) then {
 	_AiInterval = random [90,240,360];
 };
 [
-	{_this call MadinAI_fnc_civiliansAiMove},
+	{_this call MAI_fnc_civiliansAiMove},
 	_this,
 	_AiInterval
 ] call CBA_fnc_waitAndExecute;
+
+Nil

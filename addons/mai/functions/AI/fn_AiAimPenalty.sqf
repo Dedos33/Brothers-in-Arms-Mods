@@ -1,6 +1,17 @@
-// kara do celności botów za każdy trafiony wystrzał.
-// celność wraca wraz z czasem. Ustawienia w CBA.
-// [_unit]
+ /*
+	MAI_fnc_AiAimPenalty
+
+	Description:
+		 Penalty for bots accuracy for every shot hit.
+		 accuracy returns over time.
+
+	Arguments:
+		0: Unit	<OBJECT>
+
+	Return Value:
+		None
+
+*/
 if (MAI_enableAimPenalty) then
 {
 	params [["_unit",objNull,[objNull]]];
@@ -20,9 +31,9 @@ if (MAI_enableAimPenalty) then
 			{
 				_power = _power / 2;
 			};
-			_vel = (velocityModelSpace _projectile);
-			_f = random ((_power)*1000/((_vel select 1)+1));
-			_angle = random 360;
+			private _vel = (velocityModelSpace _projectile);
+			private _f = random ((_power)*1000/((_vel select 1)+1));
+			private _angle = random 360;
 			_projectile setVelocityModelSpace (_vel vectorAdd [_f * sin _angle, 0,_f * cos _angle]);
 		}else
 		{
@@ -34,3 +45,5 @@ if (MAI_enableAimPenalty) then
 	}];
 	_unit setVariable ["MAI_penaltyID",_penaltyID]; 
 };
+
+Nil

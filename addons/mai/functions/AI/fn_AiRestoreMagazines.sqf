@@ -1,11 +1,11 @@
  /*
-	MadinAI_fnc_AiRestoreMagazines
+	MAI_fnc_AiRestoreMagazines
 
 	Description:
-		 Unit AI loop, can be switch on/off mid game in CBA settings
+		 Restore AI magazines after its been deleted to force AI shoot from rocket launcher.
 
 	Arguments:
-		0: Group <GROUP>
+		0: Unit	<Object>
 
 	Return Value:
 		None
@@ -13,10 +13,10 @@
 */
 
 params [["_unit",objNull,[objNull]]];
-if (_unit isEqualTo objNull)exitWith {};
+if (_unit isEqualTo objNull) exitWith {Nil};
 
 private _deletedMags = _unit getVariable ["MAI_deletedMags",[]];
-if (_deletedMags isEqualTo [])exitWith {};
+if (_deletedMags isEqualTo []) exitWith {Nil};
 _unit setVariable ["MAI_deletedMags",nil];
 
 {
@@ -57,3 +57,5 @@ _unit setVariable ["MAI_deletedMags",nil];
 		_unit addMagazine [_class, _ammoLeft];
 	}
 }forEach _deletedMags;
+
+nil

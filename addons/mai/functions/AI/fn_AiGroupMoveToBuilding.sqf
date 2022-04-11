@@ -1,23 +1,23 @@
  /*
-	MadinAI_fnc_AiGroupMoveToBuilding
+	MAI_fnc_AiGroupMoveToBuilding
 
 	Description:
-		Main AI loop, can be switch on/off mid game in CBA settings
+		Find empty building for AI to hide, place waypoint there.
 
 	Arguments:
-		None
+		0: Group			<GROUP>
 
 	Return Value:
-		None
+		0: Building found	<BOOLEAN>
 
 */
 
 params [["_group",grpNull,[grpNull]],["_position",[0,0,0],[[],objNull]],["_distance",30,[0]]];
-if (_group isEqualTo grpNull)exitWith {false};
+if (_group isEqualTo grpNull) exitWith {false};
 
 // find buildings that AI can go inside.
 private _buildings = (nearestObjects [_position, ["House", "Building"], _distance]);
-if (_buildings isEqualTo [])exitWith {false};
+if (_buildings isEqualTo []) exitWith {false};
 private _interiorPositions = [];
 {
 	private _building = _x;
@@ -34,11 +34,11 @@ _group addWaypoint [_firstPosASL, -1];
 
 _takenBuildings = [];
 {
-	if (_interiorPositions isEqualTo [])exitWith {};
+	if (_interiorPositions isEqualTo []) exitWith {};
 	private _interiorPos = _interiorPositions deleteAt 0;
 	_interiorPos params ["_building","_pos"];
 	private _timeTaken = _building getVariable ["MAI_buildingTakenTime",-1000];
-	if (time > _timeTaken + 180)then {
+	if (time > _timeTaken + 180) then {
 		_x doMove _pos;
 		_x setFatigue 0;
 		_x setSpeedMode "FULL";

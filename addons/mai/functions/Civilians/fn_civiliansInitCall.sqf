@@ -1,5 +1,5 @@
  /*
-	MadinAI_fnc_civiliansInitCall
+	MAI_fnc_civiliansInitCall
 
 	Description:
 		Initiate civilians from 3den
@@ -23,7 +23,10 @@ switch _mode do {
 		//if (is3DEN) exitWith {
 		//["init", 0] call BIS_fnc_3DENNotification;
 		//};
-		[{_input call MadinAI_fnc_civiliansInit}] call CBA_fnc_directCall;
+		[
+			{_this call MAI_fnc_civiliansInit},
+			_input
+		] call CBA_fnc_execNextFrame;
 	};
 	// When some attributes were changed (including position and rotation)
 	case "attributesChanged3DEN": {
@@ -51,4 +54,5 @@ switch _mode do {
 		//["dragged3DEN", 0] call BIS_fnc_3DENNotification;
 	};
 };
-true
+
+Nil

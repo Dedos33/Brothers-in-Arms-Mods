@@ -1,6 +1,6 @@
 #include "../../script_components.hpp"
  /*
-	MadinAI_fnc_AiOnHitPart
+	MAI_fnc_AiOnHitPart
 
 	Description:
 		Handle AI hitting player.
@@ -23,7 +23,7 @@ if (isPlayer _target) then {
 
 	DEBUG_1("OnHitPart: Shooter %1, Penalty!", _shooter);
 
-	[_shooter] call MadinAI_fnc_AiAimPenalty;
+	[_shooter] call MAI_fnc_AiAimPenalty;
 };
 
 nil
